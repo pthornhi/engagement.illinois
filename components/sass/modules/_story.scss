@@ -1,0 +1,29 @@
+.story{@include clearfix;
+	margin:2% 2% 2% 0;
+	&.first{
+		border: 0;
+		margin-top: 0;
+		.right-col {
+			border: 0;
+		}
+	}
+	.right-col{
+		border-bottom: 1px dotted #323232;
+		padding-bottom: 2%;
+	}
+}
+.story-title {
+	margin-bottom: 20px;
+	position: relative;
+	@include background-image(linear-gradient(to right, #fff, $light, #fff));
+	a{
+		&:hover{
+			
+		}
+	}
+}
+.to-top{
+	font-size: .65em;
+	position: absolute;
+	right: 30px;
+}

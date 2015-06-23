@@ -1,0 +1,38 @@
+// style.scss
+// ==============
+
+//Compass imports
+@import "compass";
+@import "compass/reset";
+@import "compass/layout";
+@import "compass/layout/stretching";
+@import "compass/css3/font-face";
+@import "compass/css3/flexbox";
+
+//External Libraries
+@import "susy";
+@import "breakpoint";
+
+//Core Partial
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+	
+
+//Import Modules
+@import "modules/navigation";
+@import "modules/slideshow";
+@import "modules/greyheadbar";
+@import "modules/imagebanner";
+@import "modules/footer";
+@import "modules/home";
+@import "modules/story";
+@import "modules/projects";
+@import "modules/timeline";
+@import "modules/events";
+@import "modules/newsletters";
+@import "modules/involved";
+
+
+//Global styles

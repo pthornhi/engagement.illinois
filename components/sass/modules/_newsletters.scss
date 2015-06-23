@@ -1,0 +1,63 @@
+.page#newsletters{
+	.story {
+		.left-col{
+			
+		}
+		.right-col {
+			#years {
+				@include clearfix;
+				.year{
+					float: left;
+					width: 33%;
+					margin-top: 40px;
+					&.year2015{
+						
+					}
+					&.year2016{
+						
+					}
+					&.year2017{
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+// RESPONSIVE LAYOUT --------------------------------------------------------------
+.page#newsletters{
+	.layout{
+		@include breakpoint(($mobile-portrait)){
+			.right-col{
+				#years{
+					.year {
+						font-size: .85em;
+					}
+				}
+			}
+		}
+		@include breakpoint(($mobile-landscape)){
+			.right-col{
+				@include container(64);
+				#years {
+					@include span(41 of 64 last);
+					text-align: right;
+					.year {
+						width: 33%;
+						font-size: .85em;
+						text-align: left;
+					}
+				}
+			}
+		}
+		@include breakpoint(($tablet)){  //tablet
+			.right-col{
+			}
+		}
+		@include breakpoint($desktop){
+			.right-col{
+			}
+		}
+	}
+}

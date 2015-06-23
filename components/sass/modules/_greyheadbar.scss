@@ -1,0 +1,192 @@
+#greyheadbar{
+	background: $grey;
+	@include clearfix;
+	>div, >section{height: $greybarheight;padding: 0;}
+	section {
+		#logo-donate{
+			height: $greybarheight;
+			padding-left: 0;
+			width: 30%;
+			#logo{
+				background: url('/css/images/site-logo.png') 0 0 no-repeat transparent;
+				height: 34px;
+				width: 26px;
+				float: left;
+				margin-left: 0;
+				margin-right: 5%;
+				@include vertical-align ;
+			}
+			#donate{
+					width: 55%;
+					float: left;
+					height: $greybarheight;
+				img{
+					width: 106px;
+					max-width: 106px;
+					min-width: 75px;
+					@include vertical-align ;
+				}
+			}
+		}
+	}
+	#countdown{
+		width: 300px;
+		height: 15px;
+		margin: 0 auto;
+		@include justify-content(center);
+		#Stage_jbeeb_3{
+			top: -50px !important;
+		}
+	}
+	#searchbox{
+		float: right;
+		height: 25px;
+		margin-top: 10px;
+		right: -25px;
+		width: 180px;
+		#___gcse_0{
+			height: 25px;
+		}
+		.gsc-control-cse {
+		     padding: 0 !important;
+		     border: none;
+		     form.gsc-search-box {
+			    font-size: 13px;
+			    margin: 0;
+			    max-width: 178px;
+			    position: absolute;
+			    width: 100%;
+			}
+		}
+		.gsc-search-box {
+			.gsib_a{padding: 0;}
+		}
+		.gsc-search-button input.gsc-search-button-v2 {
+		    padding: 6px 5px !important;
+		    width: 25px !important;
+		    position: relative  !important;
+		    left: -3px  !important;
+		    height: 25px !important;
+		    top: 3px;
+		}
+		
+		.gsc-search-box-tools .gsc-search-box .gsc-input {
+		    padding-right: 0 !important;
+		}
+	}
+}
+
+// RESPONSIVE LAYOUT --------------------------------------------------------------
+#greyheadbar{
+	.layout{
+		@include clearfix;
+		height: auto;
+		padding: 0 $page-pad !important;
+		max-width: 1200px;
+		margin: 0 auto;
+		@include breakpoint(($mobile-portrait)){
+			@include span(12 of 12 first);
+			height: 135px;
+			#logo-donate{
+
+			}
+			#countdown{
+				position: relative;
+				#Stage_jbeeb_3{
+					top: 0px !important;
+					div span{
+						//color: $green !important;
+					}
+				}
+			}
+			#searchbox{
+				@include span(6 of 12 last);
+				margin-top: -70px;
+				right: 0;
+			}
+			
+		}
+		@include breakpoint(($mobile-landscape)){
+			@include span(12 of 12 first);
+			height: 110px;
+			#logo-donate{
+				@include span(6 of 12 first);
+				position: relative;
+				#logo{
+					margin-right: 10px;
+					right: 0;
+				}
+				#donate{
+					//@include span(2 of 12 first);
+					img {}
+				}
+			}
+			#countdown{
+				@include span(10 of 12 last);
+				position: relative;
+				height: auto;
+				top: -20px;
+				#Stage_jbeeb_3{
+					top: 0px !important;
+					div span{
+						//color: $purple !important;
+					}
+				}
+			}
+			#searchbox{
+				position: absolute !important;
+				right: 30px !important;
+				top: 10px !important;
+			}
+			#greyheaderbay {
+				height: 130px;
+			}
+			
+		}
+		@include breakpoint(($tablet)){  //tablet
+			@include span(12 of 12 first);
+			#logo-donate{
+				@include span(3 of 12 first);
+			}
+			#countdown{
+				#Stage_jbeeb_3{
+					div span{
+						//color: $red !important;
+					}
+				}
+			}
+			#searchbox{
+				
+			}
+			#greyheaderbay {
+				height: 130px;
+			}
+		}
+		@include breakpoint($desktop){
+			#logo-donate{
+				@include span(3 of 12 first);
+				padding: 0;
+			}
+			#countdown{
+				#Stage_jbeeb_3{
+					div span{
+						//color: $yellow !important;
+					}
+				}
+			}
+			#searchbox{
+				margin-top: 5px;
+			}
+		}
+		@include breakpoint($superdesktop){
+			#searchbox{
+				margin-top: -65px;
+			}
+		}
+		@include breakpoint($blowout){
+			#searchbox{
+				margin-top: -65px;
+			}
+		}
+	}
+}
