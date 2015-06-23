@@ -1,0 +1,79 @@
+#imagebanner{
+	@include clearfix;
+	position: relative;
+	top: 0;
+	margin:0 auto;
+	max-height: 300px;
+	text-align: center;
+	img{
+		min-width: 700px;
+	}
+	.bannertext{
+		@include transition-duration(1s);
+		@include transform(translateY(-160%));
+		font-size: 40px;
+		color: $light;
+		font-family: $font-banner-text;
+		@include text-shadow($dark 2px 2px 8px);
+		line-height: 60px;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+		width: auto;
+	}
+}
+#imagebanner{
+	@include breakpoint($mobile-portrait){
+		.layout{
+			max-height: 200px;
+		}
+		.bannertext{
+			font-size: 23px;
+			line-height: 36px;
+			@include transform(translateY(-114%));
+		}
+	}
+	@include breakpoint($mobile-landscape){
+		.layout{
+			max-height: 200px;
+		}
+		.bannertext{
+			font-size: 26px;
+			line-height: 40px;
+			@include transform(translateY(-160%));
+		}
+	}
+	@include breakpoint($tablet){  //tablet
+		.layout{
+			max-height: 200px;
+		}
+		.bannertext{
+			font-size: 40px;
+			line-height: 52px;
+			@include transform(translateY(-150%));
+		}
+	}
+	@include breakpoint($desktop){
+		.bannertext{
+			font-size: 40px;
+			line-height: 60px;
+			@include transform(translateY(-180%));
+		}
+	}
+	@include breakpoint($superdesktop){
+		.bannertext{
+			font-size: 50px;
+			line-height: 60px;
+			left: 25%;
+			@include transform(translateY(-220%));
+		}
+	}
+	@include breakpoint($blowout){
+		.bannertext{
+			font-size: 50px;
+			line-height: 60px;
+			left: 25%;
+			@include transform(translateY(-280%));
+		}
+	}
+}

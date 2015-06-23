@@ -1,0 +1,171 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'gulp-compass',
+1 verbose cli   '--save-dev' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 warn package.json path@0.11.14 path is also the name of a node core module.
+5 verbose install gulp-compass is installed as 2.1.0
+6 silly cache add args [ 'gulp-compass', null ]
+7 verbose cache add spec gulp-compass
+8 silly cache add parsed spec { raw: 'gulp-compass',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'gulp-compass',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed gulp-compass@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: 'gulp-compass', range: '*', hasData: false }
+13 silly mapToRegistry name gulp-compass
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry uri https://registry.npmjs.org/gulp-compass
+17 verbose addNameRange registry:https://registry.npmjs.org/gulp-compass not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/gulp-compass
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 1:48:00 AM
+21 verbose request id b428f088dea4e02a
+22 verbose etag "8EA8VH0Q2TPE0V22J1UAGSKZH"
+23 http request GET https://registry.npmjs.org/gulp-compass
+24 http 304 https://registry.npmjs.org/gulp-compass
+25 silly get cb [ 304,
+25 silly get   { date: 'Wed, 17 Jun 2015 06:48:01 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     'cache-control': 'max-age=60',
+25 silly get     etag: '"8EA8VH0Q2TPE0V22J1UAGSKZH"',
+25 silly get     age: '23',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-dfw1824-DFW',
+25 silly get     'x-cache': 'HIT',
+25 silly get     'x-cache-hits': '1',
+25 silly get     'x-timer': 'S1434523681.297994,VS0,VE0',
+25 silly get     vary: 'Accept' } ]
+26 verbose etag https://registry.npmjs.org/gulp-compass from cache
+27 verbose get saving gulp-compass to /Users/paulthornhill/.npm/registry.npmjs.org/gulp-compass/.cache.json
+28 silly addNameRange number 2 { name: 'gulp-compass', range: '*', hasData: true }
+29 silly addNameRange versions [ 'gulp-compass',
+29 silly addNameRange   [ '0.0.1',
+29 silly addNameRange     '0.0.2',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.0.5',
+29 silly addNameRange     '0.0.6',
+29 silly addNameRange     '1.0.0',
+29 silly addNameRange     '1.0.1',
+29 silly addNameRange     '1.0.2',
+29 silly addNameRange     '1.0.3',
+29 silly addNameRange     '1.0.4',
+29 silly addNameRange     '1.0.5',
+29 silly addNameRange     '1.0.6',
+29 silly addNameRange     '1.0.7',
+29 silly addNameRange     '1.0.8',
+29 silly addNameRange     '1.0.9',
+29 silly addNameRange     '1.1.0',
+29 silly addNameRange     '1.1.1',
+29 silly addNameRange     '1.1.2',
+29 silly addNameRange     '1.1.3',
+29 silly addNameRange     '1.1.4',
+29 silly addNameRange     '1.1.5',
+29 silly addNameRange     '1.1.6',
+29 silly addNameRange     '1.1.7',
+29 silly addNameRange     '1.1.8',
+29 silly addNameRange     '1.1.9',
+29 silly addNameRange     '1.2.0',
+29 silly addNameRange     '1.3.0',
+29 silly addNameRange     '1.3.1',
+29 silly addNameRange     '1.3.2',
+29 silly addNameRange     '1.3.3',
+29 silly addNameRange     '2.0.0',
+29 silly addNameRange     '2.0.1',
+29 silly addNameRange     '2.0.2',
+29 silly addNameRange     '2.0.3',
+29 silly addNameRange     '2.0.4',
+29 silly addNameRange     '2.1.0' ] ]
+30 verbose addNamed gulp-compass@2.1.0
+31 silly addNamed semver.valid 2.1.0
+32 silly addNamed semver.validRange 2.1.0
+33 silly cache afterAdd gulp-compass@2.1.0
+34 verbose afterAdd /Users/paulthornhill/.npm/gulp-compass/2.1.0/package/package.json not in flight; writing
+35 verbose afterAdd /Users/paulthornhill/.npm/gulp-compass/2.1.0/package/package.json written
+36 silly install resolved [ { name: 'gulp-compass',
+36 silly install resolved     version: '2.1.0',
+36 silly install resolved     description: 'Compile Compass files',
+36 silly install resolved     main: 'lib',
+36 silly install resolved     repository:
+36 silly install resolved      { type: 'git',
+36 silly install resolved        url: 'git://github.com/appleboy/gulp-compass.git' },
+36 silly install resolved     keywords:
+36 silly install resolved      [ 'gulp',
+36 silly install resolved        'gulpplugin',
+36 silly install resolved        'compass',
+36 silly install resolved        'scss',
+36 silly install resolved        'sass',
+36 silly install resolved        'css',
+36 silly install resolved        'compile',
+36 silly install resolved        'preprocessor',
+36 silly install resolved        'style' ],
+36 silly install resolved     author: { name: 'Bo-Yi Wu' },
+36 silly install resolved     license: 'MIT',
+36 silly install resolved     bugs: { url: 'https://github.com/appleboy/gulp-compass/issues' },
+36 silly install resolved     homepage: 'https://github.com/appleboy/gulp-compass',
+36 silly install resolved     dependencies: { 'gulp-util': '^3.0.4', through2: '^0.6.5', which: '^1.1.1' },
+36 silly install resolved     devDependencies:
+36 silly install resolved      { coveralls: '^2.11.2',
+36 silly install resolved        del: '^1.1.1',
+36 silly install resolved        gulp: '^3.8.10',
+36 silly install resolved        'gulp-istanbul': '^0.6.0',
+36 silly install resolved        'gulp-jscs': '^1.6.0',
+36 silly install resolved        'gulp-jshint': '^1.9.2',
+36 silly install resolved        'gulp-load-plugins': '^0.8.0',
+36 silly install resolved        'gulp-mocha': '^2.0.0',
+36 silly install resolved        'iconv-lite': '^0.4.7',
+36 silly install resolved        'jshint-reporter-jscs': '^0.1.0',
+36 silly install resolved        'map-stream': '0.0.5',
+36 silly install resolved        mocha: '^2.1.0',
+36 silly install resolved        should: '^4.6.5' },
+36 silly install resolved     engines: { node: '>=0.10.0' },
+36 silly install resolved     scripts: { test: 'gulp' },
+36 silly install resolved     gitHead: '0b1d104fc52d933b72db7701602bd385eace0ba7',
+36 silly install resolved     _id: 'gulp-compass@2.1.0',
+36 silly install resolved     _shasum: '1fef21ed547fc8685e754fc31954c4fc6dd2bcb3',
+36 silly install resolved     _from: 'gulp-compass@*',
+36 silly install resolved     _npmVersion: '2.7.3',
+36 silly install resolved     _nodeVersion: '0.10.36',
+36 silly install resolved     _npmUser: { name: 'appleboy', email: 'appleboy.tw@gmail.com' },
+36 silly install resolved     maintainers: [ [Object] ],
+36 silly install resolved     dist:
+36 silly install resolved      { shasum: '1fef21ed547fc8685e754fc31954c4fc6dd2bcb3',
+36 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-compass/-/gulp-compass-2.1.0.tgz' },
+36 silly install resolved     directories: {},
+36 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-compass/-/gulp-compass-2.1.0.tgz',
+36 silly install resolved     readme: 'ERROR: No README data found!' } ]
+37 info install gulp-compass@2.1.0 into /Library/WebServer/Documents/engagement.illinois.local
+38 info installOne gulp-compass@2.1.0
+39 verbose installOne of gulp-compass to /Library/WebServer/Documents/engagement.illinois.local not in flight; installing
+40 warn locking Error: EACCES, open '/Users/paulthornhill/.npm/_locks/gulp-compass-83635d97ddcf0220.lock'
+40 warn locking     at Error (native)
+40 warn locking  /Users/paulthornhill/.npm/_locks/gulp-compass-83635d97ddcf0220.lock failed { [Error: EACCES, open '/Users/paulthornhill/.npm/_locks/gulp-compass-83635d97ddcf0220.lock']
+40 warn locking   errno: -13,
+40 warn locking   code: 'EACCES',
+40 warn locking   path: '/Users/paulthornhill/.npm/_locks/gulp-compass-83635d97ddcf0220.lock' }
+41 verbose stack Error: Attempt to unlock /Library/WebServer/Documents/engagement.illinois.local/node_modules/gulp-compass, which hasn't been locked
+41 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+41 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1004:5)
+41 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1008:20
+41 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+41 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+41 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+41 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+42 verbose cwd /Library/WebServer/Documents/engagement.illinois.local
+43 error Darwin 14.3.0
+44 error argv "node" "/usr/local/bin/npm" "install" "gulp-compass" "--save-dev"
+45 error node v0.12.2
+46 error npm  v2.7.4
+47 error Attempt to unlock /Library/WebServer/Documents/engagement.illinois.local/node_modules/gulp-compass, which hasn't been locked
+48 error If you need help, you may report this error at:
+48 error     <https://github.com/npm/npm/issues>
+49 verbose exit [ 1, true ]

@@ -1,0 +1,196 @@
+$event-height: 120px;
+#events{
+	.left-col {
+		width: 20%;
+	}
+	.right-col {
+		width: 80%;
+	}
+	.story{
+		margin: 0;
+		&.first{
+			margin-bottom: 30px;
+			height: auto;
+			.right-col {
+				border: none;
+				height: auto;
+			}
+		}
+		.left-col {
+
+		}
+		.right-col {
+			padding: 0;
+			width: 77%;
+			height: $event-height;
+			#page-title {
+				
+			}
+			.event-date {
+				background: $grey;
+				float: left;
+				font-family: $font-greybody-text;
+				font-size: 14px;
+				color: $lighter-text;
+				text-align: center;
+				width: 125px;
+				height: ($event-height)-1;
+				padding: 21px 0;
+				.month {
+					text-transform: uppercase;
+					
+				}
+				.day {
+					font-family: $font-large-numbers;
+					font-size: 40px;
+				}
+				.year {
+					
+				}
+			}
+			.event-description{
+				margin-left: 150px;
+				//@include vertical-align;
+				transform: translateY(50%);
+				color: $primary-text;
+				.location{
+					color: $link-blue;
+					font-family: $font-blue-location;
+					font-size: 1.75em;
+				}
+				p {
+					
+				}
+			}
+		}
+	}
+}
+
+#event-detail{
+	.story{
+		.left-col{
+			.list-links{
+				.location {
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+// RESPONSIVE LAYOUT --------------------------------------------------------------
+#events{
+	.layout{
+		@include breakpoint(($mobile-portrait)){
+			.event-date{
+				.month{
+					
+				}
+				.day{
+					
+				}
+				.year{
+					
+				}
+			}
+			.right-col{
+				@include container(16);
+				height: auto;
+				.event-date{
+					@include span(4 of 16 first);
+					font-size: .75em;
+					.month{
+						
+					}
+					.day{
+						font-size: 32px;;
+					}
+					.year{
+						
+					}
+				}
+				.event-description{
+					@include span(11 of 16 last);
+					margin: 10px 0 0 0;
+					font-size: .9em;
+					top: 0;
+					transform: none;
+					.location{
+						font-size: 1.25em !important;
+					}
+				}
+			}
+		}
+		@include breakpoint(($mobile-landscape)){
+			.event-date{
+				.month{
+					
+				}
+				.day{
+					font-size: 32px !important
+				}
+				.year{
+					
+				}
+			}
+			.event-description{
+				.location{
+					font-size: 1.25em !important;
+				}
+			}
+		}
+		@include breakpoint(($tablet)){  //tablet
+			.event-date{
+				.month{
+					
+				}
+				.day{
+					font-size: 38px !important;
+				}
+				.year{
+					
+				}
+			}
+			.event-description{
+				.location{
+					font-size: 1.25em;
+				}
+			}
+		}
+		@include breakpoint($desktop){
+			.right-col{
+				.event-date{
+					.month{
+						
+					}
+					.day{
+						
+					}
+					.year{
+						
+					}
+				}
+				.event-description{
+					.location{
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+#event-detail{
+	.layout{
+		@include breakpoint($desktop){
+			.story {
+				.right-col {
+					@include container(2);
+					img {
+						@include span(1 of 2 first);
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}
