@@ -1,0 +1,81 @@
+.view-gallery{
+	.view-content{
+		@include clearfix;
+		margin-left: calc((100% - 840px + 20px) / 2);
+		width: 1260px;
+		.masonry-item{
+			//float: left;
+			background: $light;
+			border-radius: 0;
+			box-shadow: 2px 2px 2px #eaeaea;
+			font-size: 12px;
+			padding: 0;
+			margin: 20px 20px 0 0;
+			width: 400px;
+			float: left;
+			overflow: hidden;
+			img{
+				height: auto !important;
+			}
+			.views-field-title, .views-field-body{
+				padding: 20px 40px;
+			}
+			.views-field-title{
+				font-weight: normal;
+				font-size: 150%;
+				line-height: 150%;
+				font-family: $font-greybody-text;
+			}
+		}
+	}
+}
+/************************************************************************************
+//				 RESPONSIVE GALLERY LAYOUT 
+************************************************************************************/
+.view-gallery{
+	@include breakpoint(($mobile-portrait)){
+		.view-content{
+			.masonry-item{
+				//width: 100%;
+			}
+		}		
+	}
+	@include breakpoint(($mobile-landscape)){
+		.view-content{
+			.masonry-item{
+				//width: 45%;
+			}
+		}		
+	}
+	@include breakpoint(($tablet)){  //tablet
+		.view-content{
+			.masonry-item{
+				//width: 45%;
+			}
+		}		
+	}
+	@include breakpoint($desktop){
+		.view-content{
+			.masonry-item{
+				//width: 30%;
+			}
+		}		
+	}
+	@include breakpoint($superdesktop){
+		.view-content{
+			.masonry-item{
+				//width: 30%;
+			}
+		}		
+	}
+	@include breakpoint($blowout){
+		.view-content{
+			.masonry-item{
+				width: 30%;
+			}
+		}		
+	}
+}
+/************************************************************************************
+//				END RESPONSIVE GALLERY LAYOUT 
+************************************************************************************/

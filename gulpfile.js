@@ -30,13 +30,15 @@ if (env==='development') {
 }
 
 jsSources = [
-	/* 'components/scripts/*.js' */
+	//'components/scripts/*.js'
 	'components/scripts/countdown.js',
 	'components/scripts/jquery.js',
+	'components/scripts/jquery-ui.min.js',
 	'components/scripts/jquery.easing.js',
 	'components/scripts/jquery.sticky.js',
 	'components/scripts/flowtype.js',
 	'components/scripts/responsiveslides.min.js',
+	'components/scripts/jquery.multiselect.js',
 	'components/scripts/script.js',
 ];
 sassSources = ['components/sass/style.scss'];
@@ -66,7 +68,7 @@ gulp.task('compass', function() {
       css: outputDir + 'css',
       image: outputDir + 'images',
       style: sassStyle,
-      require: ['susy', 'breakpoint'],
+      require: ['susy', 'breakpoint', 'sassy-buttons'],
       debug: false,
       sourcemap: true
     })

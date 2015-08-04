@@ -28,6 +28,69 @@ $(document).ready(function ($) {
 			});
 		});
 		
+		//alter the timeline view tags filter to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-tags-tid').length > 0){
+			$('.form-item-field-tags-tid select').multiselect({
+											      header: false,
+											      height: 225,
+											      minWidth: 125,
+											      classes: '',
+											      checkAllText: 'Check all',
+											      uncheckAllText: 'Uncheck all',
+											      noneSelectedText: 'Tags',
+											      selectedText: '# selected',
+											      selectedList: 0,
+											      show: null,
+											      hide: null,
+											      autoOpen: false,
+											      multiple: true,
+											      position: {},
+											      appendTo: 'body',
+												  afterSelect: function(values){
+												    alert('Select value: '+values);
+												  },
+												  afterDeselect: function(values){
+												    alert('Deselect value: '+values);
+												  }
+											    });
+		}
+		
+		//alter the timeline view colleges and school filter to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-colleges-and-schools-tid').length > 0){
+			$('.form-item-field-colleges-and-schools-tid select').multiselect({
+											      header: false,
+											      height: 225,
+											      minWidth: 125,
+											      classes: '',
+											      checkAllText: 'Check all',
+											      uncheckAllText: 'Uncheck all',
+											      noneSelectedText: 'Colleges & Schools',
+											      selectedText: '# selected',
+											      selectedList: 0,
+											      show: null,
+											      hide: null,
+											      autoOpen: false,
+											      multiple: true,
+											      position: {},
+											      appendTo: 'body'
+											    });
+		}
+		
+		// manipulate the search box on the timeline
+		if($('.views-widget-filter-keys').length > 0){
+			var searchContainer = $('.views-widget-filter-keys');
+			if(searchContainer.find('#edit-keys').val() !== ''){
+				searchContainer.find('label').hide();
+			}
+			searchContainer.find('#edit-keys').on('focus', function(){
+				searchContainer.find('label').hide();
+			});
+			searchContainer.find('#edit-keys').on('focusout', function(){
+				if($(this).val() === ''){
+					searchContainer.find('label').show();	
+				}
+			});
+		}
 		/* $('nav .layout .navlist').on('click', function(){
 			$(this).parent().toggleClass( 'open' );
 			$('.nav-item').animate({
@@ -106,6 +169,38 @@ $(document).ready(function ($) {
 				fontRatio : 10
 			});
 		}
+		//control font-size in exposed colleges and schools filter dropdowns
+		if($('.views-widget-filter-field_colleges_and_schools_tid button').length > 0){
+			$('.views-widget-filter-field_colleges_and_schools_tid button').flowtype({
+				minFont : 12,
+				maxFont : 40,
+				fontRatio : 12
+			});
+		}
+		//control font-size in exposed tags filter dropdowns
+		if($('.views-widget-filter-field_tags_tid button').length > 0){
+			$('.views-widget-filter-field_tags_tid button').flowtype({
+				minFont : 16,
+				maxFont : 40,
+				fontRatio : 35
+			});
+		}
+		//control font-size in gallery captions
+		if($('.view-gallery .view-content ul li p').length > 0){
+			$('.view-gallery .view-content ul li p').flowtype({
+				minFont : 12,
+				maxFont : 20,
+				fontRatio : 35
+			});
+		}
+		//control font-size in exposed filter buttons
+		/* if($('.views-exposed-widget input').length > 0){
+			$('.views-exposed-widget input').flowtype({
+				minFont : 12,
+				maxFont : 50,
+				fontRatio : 40
+			});
+		} */
  /**
  * The nav stuff
  */
@@ -210,6 +305,5 @@ $(document).ready(function ($) {
 	} else {
 		alert('jQuery Library Not Loaded');
 	}
-  
- }); //on load
 
+}); //on load

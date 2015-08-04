@@ -9,9 +9,11 @@
 @import "compass/css3/font-face";
 @import "compass/css3/flexbox";
 
+
 //External Libraries
 @import "susy";
 @import "breakpoint";
+@import "sassy-buttons";
 
 //Core Partial
 @import "variables";
@@ -21,6 +23,7 @@
 	
 
 //Import Modules
+@import "modules/jqueryui";
 @import "modules/navigation";
 @import "modules/slideshow";
 @import "modules/greyheadbar";
@@ -29,10 +32,13 @@
 @import "modules/home";
 @import "modules/story";
 @import "modules/projects";
-@import "modules/timeline";
 @import "modules/events";
 @import "modules/newsletters";
 @import "modules/involved";
+@import "modules/timeline";
+@import "modules/gallery";
+@import "modules/multiselect";
+
 
 
 //Global styles
