@@ -15,24 +15,58 @@ $(document).ready(function ($) {
   'use strict';
 	if(typeof $ !== 'undefined'){
 		$(function() {
-			$('.gallery').responsiveSlides({
+			$('ul.gallery').responsiveSlides({
 		        auto: true,
-		        pagination: false,
-		        pager: false,
-		        nav: false,
+		        pager: true, 
+		        nav: true,
+				pause: true,           // Boolean: Pause on hover, true or false
+				pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+				prevText: '',   // String: Text for the "previous" button
+				nextText: '',
 		        fade: 500,
 		        maxwidth: 1200,
-		        manualControls: '#slider3-pager',
+		        navContainer: '#slideNav',
 		        namespace: 'centered-btns',
 		        random: true
 			});
 		});
-		
-		//alter the timeline view tags filter to be a dropdown button
+		/* auto: false,
+        pager: true,
+        nav: true,
+        speed: 500,
+        maxwidth: 800,
+        namespace: "centered-btns"
+        */
+        
+		//alter the view media types filter to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-media-type-tid').length > 0){
+			$('.form-item-field-media-type-tid select').multiselect({
+											      header: false,
+											      height: 110,
+											      minWidth: 86,
+											      classes: '',
+											      checkAllText: 'Check all',
+											      uncheckAllText: 'Uncheck all',
+											      noneSelectedText: 'Media',
+											      selectedText: '# selected',
+											      selectedList: 0,
+											      show: null,
+											      hide: null,
+											      autoOpen: false,
+											      multiple: true,
+											      //position: {
+												  //    my: 'left bottom',
+												  //    at: 'left top'
+											      //},
+											      appendTo: 'body',
+											    });
+		}
+
+		//alter the view tags filter to be a dropdown button
 		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-tags-tid').length > 0){
 			$('.form-item-field-tags-tid select').multiselect({
 											      header: false,
-											      height: 225,
+											      height: 400,
 											      minWidth: 125,
 											      classes: '',
 											      checkAllText: 'Check all',
@@ -44,35 +78,46 @@ $(document).ready(function ($) {
 											      hide: null,
 											      autoOpen: false,
 											      multiple: true,
-											      position: {},
+											      position: {
+												      my: 'left bottom',
+												      at: 'left top'
+											      },
 											      appendTo: 'body',
-												  afterSelect: function(values){
-												    alert('Select value: '+values);
-												  },
-												  afterDeselect: function(values){
-												    alert('Deselect value: '+values);
-												  }
 											    });
 		}
-		
-		//alter the timeline view colleges and school filter to be a dropdown button
+		var $callback = $('#block-block-1');
+		//alter the view colleges and school filter to be a dropdown button
 		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-colleges-and-schools-tid').length > 0){
 			$('.form-item-field-colleges-and-schools-tid select').multiselect({
-											      header: false,
-											      height: 225,
-											      minWidth: 125,
-											      classes: '',
-											      checkAllText: 'Check all',
-											      uncheckAllText: 'Uncheck all',
-											      noneSelectedText: 'Colleges & Schools',
-											      selectedText: '# selected',
-											      selectedList: 0,
-											      show: null,
-											      hide: null,
-											      autoOpen: false,
-											      multiple: true,
-											      position: {},
-											      appendTo: 'body'
+												header: false,
+												height: 400,
+												minWidth: 315,
+												classes: '',
+												checkAllText: 'Check all',
+												uncheckAllText: 'Uncheck all',
+												noneSelectedText: 'Colleges & Schools',
+												selectedText: '# selected',
+												selectedList: 2,
+												show: null,
+												hide: null,
+												autoOpen: false,
+												multiple: true,
+												appendTo: 'body',
+												position: {
+												      my: 'left bottom',
+												      at: 'left top'
+												   },
+
+												//click: function(event, ui){
+												//	$callback.append(ui.value + ' ' + (ui.checked ? 'checked' : 'unchecked') );
+												//	},
+											   optgrouptoggle: function(event, ui){
+											      var values = $.map(ui.inputs, function(checkbox){
+											         return checkbox.value;
+											      }).join(', ');
+											      
+											      $callback.html('<strong>Checkboxes ' + (ui.checked ? 'checked' : 'unchecked') + ':</strong> ' + values);
+											   }
 											    });
 		}
 		
@@ -107,7 +152,8 @@ $(document).ready(function ($) {
 		
 		
 		//makes the dropdown for time selectors on the timeline page
-		$('#time-selector #time-span').on('click', function(){
+		// this was the old design
+		/* $('#time-selector #time-span').on('click', function(){
 			var NoUnits = $(this).find('#time-units li').length;
 			var dropdownHeight = (NoUnits * 30)-13;
 			if($('#time-units').height() === 0){
@@ -122,6 +168,7 @@ $(document).ready(function ($) {
 				}, 500);	
 			}
 		});
+		
 	    $('#time-selector #time-units .time a').on('click', function (event) {
 		    event.preventDefault();
 		    var loc_to_go = $(this).text();
@@ -159,30 +206,21 @@ $(document).ready(function ($) {
 				$('#nav-right').html('&nbsp;');
 			}
 			
+		} */ 
+		//control font-size in titlebox of greybar
+		if($('#titlebox').length > 0){
+			$('#titlebox').flowtype({
+				minFont : 17,
+				maxFont : 40,
+				fontRatio : 22
+			});
 		}
-		
 		//control font-size in image caption
 		if($('.caption').length > 0){
 			$('.caption').flowtype({
 				minFont : 12,
 				maxFont : 60,
 				fontRatio : 10
-			});
-		}
-		//control font-size in exposed colleges and schools filter dropdowns
-		if($('.views-widget-filter-field_colleges_and_schools_tid button').length > 0){
-			$('.views-widget-filter-field_colleges_and_schools_tid button').flowtype({
-				minFont : 12,
-				maxFont : 40,
-				fontRatio : 12
-			});
-		}
-		//control font-size in exposed tags filter dropdowns
-		if($('.views-widget-filter-field_tags_tid button').length > 0){
-			$('.views-widget-filter-field_tags_tid button').flowtype({
-				minFont : 16,
-				maxFont : 40,
-				fontRatio : 35
 			});
 		}
 		//control font-size in gallery captions

@@ -50,9 +50,19 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
-
   <?php if ($rows): ?>
     <div class="view-content">
+	    <!-- custom image in the row for story uploads -->
+	    <div id="alumn-upload-image" class="field-content masonry-item">
+	        <div id="file-35" class="file file-image file-image-jpeg">
+	            <h2 class="element-invisible"></h2>
+	            <div class="content">
+	                <a href="/node/add/node-gallery-item">
+	                    <img title="" alt="" src="/images/gallery-upload-block.jpg" typeof="foaf:Image"></img>
+	                </a>
+	            </div>
+	        </div>
+	    </div>
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>

@@ -269,7 +269,7 @@ class views_timelinejs_plugin_style_timelinejs extends views_plugin_style {
       '#title' => 'Font',
       '#description' => t('This setting will only have an effect if the selected font is available to the site (ie @font-face).'),
       '#options' => array(
-        'default' => t('Default'),
+        '' => t('Default'),
         'AbrilFatface-Average' => 'AbrilFatface-Average',
         'Arvo-PTSans' => 'Arvo-PTSans',
         'Bevan-PotanoSans' => 'Bevan-PotanoSans',
@@ -478,16 +478,31 @@ class views_timelinejs_plugin_style_timelinejs extends views_plugin_style {
             if (isset($this->view->field[$tmp['fieldname']])) {
               $value = $this->view->field[$tmp['fieldname']]->get_value($row);
               if (is_array($value)) {
-                $value = array_shift($value);
-              }
-
-              if ($conversion_callback = views_timelinejs_get_callback($tmp['handler'], $tmp['field_type'], 'tag_sources')) {
-                $value = call_user_func($conversion_callback, $value, array(
-                  'field' => $tmp,
-                ));
-              }
+                //$value = array_shift($value);
+                $tmpValue = "";
+                foreach($value as $tag){
+	              if ($conversion_callback = views_timelinejs_get_callback($tmp['handler'], $tmp['field_type'], 'tag_sources')) {
+	                $tag = call_user_func($conversion_callback, $tag, array(
+	                  'field' => $tmp,
+	                ));
+	                //$tagText = $tag;
+	                $tmpValue === ""?$tmpValue .= "<ul>":"";
+		                
+	                $tmpValue .= "<li>$tag</li>";
+	              }
+	              $value = $tmpValue."</ul>";
+	            }
+              } else {			  
+	              if ($conversion_callback = views_timelinejs_get_callback($tmp['handler'], $tmp['field_type'], 'tag_sources')) {
+	                $value = call_user_func($conversion_callback, $value, array(
+	                  'field' => $tmp,
+	                ));
+	              }
+	              $rows[$count][$target_field] = check_plain($value);
+				}
             }
-            $rows[$count][$target_field] = check_plain($value);
+			$rows[$count][$target_field] = $value;
+            
           }
 
           // Start and End date.
@@ -565,7 +580,7 @@ class views_timelinejs_plugin_style_timelinejs extends views_plugin_style {
             if (is_array($value)) {
               $value = array_shift($value);
               // Allow for imagefield image style selection.
-              if ($this->view->field[$tmp['fieldname']]->options['settings']['image_style']) {
+              if ($this->view->field[$tmp['fieldname']]->options['settings']['image_style'] && !empty($value['uri'])) {
                 $value['uri'] = image_style_url($this->view->field[$tmp['fieldname']]->options['settings']['image_style'], $value['uri']);
               }
             }

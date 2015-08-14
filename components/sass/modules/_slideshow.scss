@@ -1,6 +1,6 @@
 #home{
 	@include clearfix;
-	.content{
+	.content.slide-container{
 		display: table;
 		text-align: center;
 		.caption{
@@ -29,30 +29,93 @@
 				}	
 			}
 		}
-		.centered-btns_nav{
-			margin-top: 0;
-			left: auto;
-			top: 10px;
+	}
+}
+#slideNav{
+	@include clearfix;
+	position: relative;
+	top: -150px;
+	ul{ //pager
+		position: absolute;
+		z-index: 100;
+		//background: transparent url("/css/images/trans-black.png") repeat scroll left top;
+		@include border-radius();
+		padding: 0 5px;
+		right: 7%;
+		top: 10px;
+		li {
+			margin-right: 10px;
+			a{
+				background: $light;
+			}
 		}
-		.centered-btns_nav.prev{
-			right: 43px;
+		li.centered-btns_here{
+			a {
+				background: $hover_orange;
+			}
+		}
+	}
+	.centered-btns_nav{
+		margin-top: 0;
+		left: auto;
+		top: 10px;
+		width: 46px;
+	}
+	.centered-btns_nav.prev{
+		left: 43px;
+		background: transparent url("/css/images/btns_nav_prev.png") no-repeat scroll center;
+	}
+	.centered-btns_nav.pause{
+		left: 89px;
+		width: 56px;
+		background: transparent url("/css/images/btns_nav_pause.png") no-repeat scroll center;
+	}
+	.centered-btns_nav.next{
+		left: 145px;
+		background: transparent url("/css/images/btns_nav_next.png") no-repeat scroll center;
+	}
+}
+/**********************************************************************
+// 						RESPONSIVE CODE
+**********************************************************************/
+footer{
+	@include breakpoint(($mobile-portrait)){
+		#slideNav{
+			top: -300px;
+		}
+	}
+	@include breakpoint(($mobile-landscape)){
+		#slideNav{
+			top: -300px;
 		}
 	}
 }
 
-// RESPONSIVE CODE
 #home{
 	.layout {
 		padding: 0 !important;
+		@include breakpoint($mini){
+			.gallery{
+				.caption{
+					@include transition(all 0.3s ease-in-out);
+					font-size: 46px !important;
+					width: 348px;
+					margin-left: 4%;
+					margin-top: -30%;
+				}
+				img{
+					left: -25%;
+				}
+			}
+		}
 		@include breakpoint(($mobile-portrait)){
 			@include span(12 of 12 first);
 			.gallery{
 				.caption{
 					@include transition(all 0.3s ease-in-out);
-					font-size: 46px;
-					width: 348px;
-					margin-left: 10px;
-					margin-top: -45%;
+					width: 400px;
+					margin-left: 4%;
+					margin-top: -38%;
 				}
 				img{
 					left: -25%;
@@ -60,8 +123,6 @@
 			}
 		}
 		@include breakpoint(($mobile-landscape)){
-			@include show-grid(overlay);
-			@include span(12 of 12 first);
 			.gallery {	
 				.caption{
 					@include transition(all 0.3s ease-in-out);

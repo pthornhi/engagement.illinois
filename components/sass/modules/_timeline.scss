@@ -1,7 +1,10 @@
-#timeline {
+body #timeline {
 	&.page {
+		padding: 0;
 		.content {
 			text-align: center;
+			width: 100%;
+			max-width: 100%;
 		}
 		#page-title{
 			@include transition-duration(1s);
@@ -95,130 +98,97 @@ $story-width: 74%;
 		}
 	}
 }
-
-// DYNAMIC TIMELINE --------------------------------------------------------------
-$filter_height: 40px;
+// --------------------------------------------------------------
+// DYNAMIC TIMELINE
+// --------------------------------------------------------------
+$filter_height: 45px;
+#timeline *, #timeline label, #timeline label.ui-state-hover, #timeline .ui-multiselect-checkboxes label{
+	font-family: $font-greybody-text !important;
+	div {
+		font-family: $font-greybody-text !important;
+	}
+}
+		//////////////////////////
+		////	filter stuff /////
+		//////////////////////////
 .view-timeline{
 	margin-top: 20px;
 	.view-filters{
-		form#views-exposed-form-timeline-page{
+		form{
+			width: 773px;
 			float: right;
-			width: 75%;
-			.views-widget{
-				button.ui-multiselect{
-					font-family: $font-greybody-text;
-					background: $blue;
-					height: $filter_height;
-					color: $light;
+		}
+	}
+}
+	
+	.view-content{
+		#timelinejs-timeline-page{
+			#storyjs-timeline{
+				.vco-feature .vco-slider{
+					.slider-container{
+						.slider-item-container{
+							.slider-item{
+								.content-container{
+									.media{
+										
+									}
+									.text{
+										.container{
+											position: relative;
+											padding: 15px;
+											.date {
+												
+											}
+											.slide-tag{
+												position: absolute;
+												bottom: -10px;
+												background: none;
+												left: 0;
+												ul {
+													list-style-type: none;
+													li {
+														color: $primary-text;
+														display: inline-block;
+														margin-right: 3px;
+														background: $light-grey;
+														padding: 5px 10px;
+														@include border-radius(10px);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
-			}
-			.views-exposed-widget{
-				padding-top: 0;
-				margin-bottom: $filter_height/2;
-			}
-			.views-widget-filter-keys{ //search box
-				width: 34%;
-				position: relative;
-				label{
-					text-align: center;
-					display: block;
-					width: 100%;
-					color: $watermark;
-					position: absolute;
-					font-family: $font-greybody-text;
-					font-size: 25px;
-					line-height: $filter_height + 3;
-				}
-				.views-widget{
-					width: 100%;
-					.form-item {
-						width: 100%;
-						input{
-							width: 100%;
-							height: $filter_height;
-							font-size: 23px;
-							color: $lighter-text;
-							background-color: #fff;
-							border: 1px solid $grey;
+				.vco-navigation {
+					.timenav-background {
+						.timenav-tag {
+							display: none;
 						}
 					}
 				}
 			}
-			.views-exposed-widget {
-				margin-right: 1%;
-				padding: 0;
-				input{
-					margin-top: 0;
-					@include sassy-button("flat", 0, 19px, $grey, $grey, $primary-text, $font-greybody-text, false);
-					padding: 8px 1.5em;
-					//@include sassy-button(gradient style, border radius, font size, first color, second color, text color, text style, auto hover)
-				}
-			}
-			.views-exposed-widget{ //the whole group
-				height: $filter_height;
-				color: $light;
-			}
-			.views-submit-button{
-				margin: 0px 1% 10px 0%;
-				input{}
-			}
-			.views-reset-button{
-				input{}
-			}
-			.views-widget-filter-field_colleges_and_schools_tid{ // colleges and schools dropdwon: ;
-				width: 200px;
-				button{
-					width: 200px !important;
-				}
-			}
-			.views-widget-filter-field_tags_tid{ //tags dropdown
-				
-			}
-		}
-		#edit-field-tags-tid-wrapper label{
-			display: none;
-		}
-		#edit-field-colleges-and-schools-tid-wrapper label{
-			display: none;
-		}
-		.views-reset-button{
-			
 		}
 	}
-}
-.ui-multiselect-menu.ui-widget {  //both dropdowns
-	ul.ui-multiselect-checkboxes {
-		li {
-			label{
-				input{
-
-				}	
-				span{
-					background: none;
-					color: $typeDefault;
-					font-family: $font-greybody-text;
-					font-weight: normal;
-					font-size: 11px;					
-				}
-				&.ui-state-hover{
-					background: none;
-					color: $typeDefault;
-					font-family: $font-greybody-text;
-					border: 1px solid $lighter-text;
-					font-weight: normal;
-					input{
-						-moz-appearance:none;
-						-webkit-appearance:none;
-						-o-appearance:none;
-					} 
-					span {
-						color: $blue;
-					}
-				}
-			}
-		}
+	
+	.vco-slider .slider-item .content .content-container .media .media-wrapper .media-container .media-frame, .vco-slider .slider-item .content .content-container .media .media-wrapper .media-container .media-image img {
+		background-color: #FFF;
+		border: none;
 	}
-}
+		//////////////////////////////
+		////	end filter stuff /////
+		//////////////////////////////
+		
+		//////////////////////////////
+		////	slideshow stuff  /////
+		//////////////////////////////
+		
+		///////////////////////////////
+		//// end slideshow stuff  /////
+		///////////////////////////////
 // RESPONSIVE LAYOUT DYNAMIC TIMELINE--------------------------------------------------------------
 .page-timeline{
 		@include breakpoint(($mobile-portrait)){
@@ -237,7 +207,88 @@ $filter_height: 40px;
 			}
 		}
 }
+// --------------------------------------------------------------
+// END DYNAMIC TIMELINE
+// --------------------------------------------------------------
 
+// --------------------------------------------------------------
+// TIMELINE ADMIN FORM
+// --------------------------------------------------------------
+.logged-in {
+	.page-title {
+		margin-left: 60px;
+	}
+	#timeline-date-node-form{
+		width: 90%;
+		margin: 20px auto;
+		border: 1px solid $grey;
+		padding: 40px;
+		-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+		box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+		text-align: left;
+		.form-item {
+			
+			&.form-item-title{
+				label{
+					
+				}
+				input{
+					width: 80%;
+					height: 30px;
+				}
+			}
+				
+		}
+		fieldset{
+			//background: $light-grey;
+			margin: 10px 0;
+			.fieldset-title {
+				&:hover{
+					text-decoration: underline;
+				}	
+			}
+		}
+	}
+	#node-admin-content{
+		width: 90%;
+		margin: 20px auto;
+		border: 1px solid $grey;
+		padding: 40px;
+		-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+		box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+		text-align: left;
+		#edit-filters {
+			border-bottom: 3px solid $hover_orange;
+			padding-bottom: 20px;
+			padding-left: 20px;
+			margin-bottom: 20px;
+			background: lighten($hover_orange, 20);
+			legend{
+				position: relative;
+				top: -10px;
+			}
+		}
+		table {
+			width: 100%;
+			th {
+				border-bottom: 1px solid $blue;
+				margin-bottom: 5px;
+				img {
+					width: auto;
+				}
+			}
+			tr.even {
+				background: #eee;
+			}
+			tr.odd {
+				background: lighten(#EEE, 20);;
+			}
+		}
+	}
+}
+// --------------------------------------------------------------
+// END TIMELINE ADMIN FORM
+// --------------------------------------------------------------
 // RESPONSIVE LAYOUT --------------------------------------------------------------
 .page#timeline{
 	.layout{

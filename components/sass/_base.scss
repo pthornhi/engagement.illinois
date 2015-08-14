@@ -15,7 +15,7 @@ body {font-family:$font-greybody-text;color:$primary-text;font-size: 16px;line-h
 body main#container{z-index: 0;}
 body main#container .page{z-index: 0;}
 body .page{@include clearfix;position: relative;}
-body #wrapper {position: relative;z-index: 10;top: -8px;left: 0;overflow: hidden;}
+body #wrapper {position: relative;z-index: 10;left: 0;overflow: hidden;}
 body .content{position: relative;max-width: 1200px; margin: 0 auto;}
 body a, body a:visited{color: $link-blue;text-decoration: none;}
 .page{background: $pageBackground;}
@@ -36,7 +36,7 @@ strong {}
 
 p { }
 #title-container{
-	@include clearfix;
+	//@include clearfix;
 	  position: relative;
 	  max-width: 1200px;
 	  margin: 0 auto;	

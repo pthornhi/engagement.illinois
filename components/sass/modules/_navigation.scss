@@ -5,30 +5,13 @@ nav{
 		padding: 0 $page-pad;
 		max-width: 1200px;
 		margin: 0 auto;
-		#mobile-nav-logo{
-			float: left;
-		    left: -20px;
-		    margin-left: 10px;
-		    margin-top: 14px;
-		    position: relative;
-		    width: 55px;
-		    display: none;
-		    a{
-			    display: block;
-			    width: 55px;
-			    height: 76px;
-		    }
-			img {
-				width: 100%;
-			}
-		}	
 		.navlist{
 			@include display-flex;
 			padding: 0;
 			height: auto;
 			@include justify-content(space-around);
 			.nav-item{
-				height: 140px;
+				height: 90px;
 				display: inline-block;
 				a {
 					@include nav-vertical-align;
@@ -111,14 +94,6 @@ nav {
 		padding: 0;
 		left: 0;
 		width: 100%;
-		#mobile-nav-logo{
-			width: 55px;
-			margin-left: 10px;
-			margin-top: 5px;
-			img {
-				width: 100%;
-			}
-		}
 		ul {
 		    list-style-type: none;
 		    margin: 0;
@@ -138,7 +113,7 @@ nav {
 				    font-size: 18px;
 				}
 				&.mobile-icon{
-					height: 0;
+					height: 88px;
 					border-bottom: none;
 				}
 			}
@@ -174,8 +149,12 @@ body.pmt-open {
 		height: $slide-menu-height;
 	}
 	#wrapper{
-		@include transition-duration(.75s);
-		top: ($slide-menu-height)-110;
+		top: ($slide-menu-height);
+	}
+	@include breakpoint($mini){
+		#wrapper{
+			top: ($slide-menu-height)-88;
+		}
 	}
 	button {
 		&.toggle-push-top{
@@ -191,6 +170,9 @@ body.pmt-open {
 // RESPONSIVE LAYOUT --------------------------------------------------------------
 $landscape-nav-height: 78px;
 nav.navbar{
+	@include breakpoint($mini){
+		display: none;
+	}
 	@include breakpoint($mobile-portrait){
 		display: none;
 	}
@@ -235,10 +217,6 @@ nav.navbar{
 	}
 	@include breakpoint(($mobile-landscape)){
 		height: $landscape-nav-height;
-		#mobile-nav-logo{
-			display: block;
-			margin-top: 2px;
-		}
 		.navlist{
 			.nav-item{
 				height: $landscape-nav-height;

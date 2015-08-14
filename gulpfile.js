@@ -31,7 +31,7 @@ if (env==='development') {
 
 jsSources = [
 	//'components/scripts/*.js'
-	'components/scripts/countdown.js',
+	//'components/scripts/countdown.js',
 	'components/scripts/jquery.js',
 	'components/scripts/jquery-ui.min.js',
 	'components/scripts/jquery.easing.js',

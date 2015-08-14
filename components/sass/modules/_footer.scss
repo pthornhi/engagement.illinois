@@ -9,6 +9,7 @@
 	}
 }
 footer{
+	position: relative;
 	color: $lighter-text;
 	height: 95px;
 	margin: -16px auto 0 auto;
@@ -20,7 +21,8 @@ footer{
 			@include display-flex(inline-flex);
 			@include justify-content(center);
 			width: 100%;
-			padding-top: 45px;
+			padding-top: 70px;
+			position: relative;
 			.element{
 				font-size: 12px;
 				border-right: 1px solid $lighter-text;
@@ -39,10 +41,17 @@ footer{
 // RESPONSIVE LAYOUT --------------------------------------------------------------
 
 footer{
+	@include breakpoint($mini){
+		.layout .elements{
+			padding-top: 0;
+			top: -25px;
+		}
+	}
 	@include breakpoint(($mobile-portrait)){
 		height: 60px;
 		.layout .elements{
 			padding-top: 30px;
+			top: -25px;
 			.element{
 				height: auto !important;
 				&.address{
@@ -50,17 +59,24 @@ footer{
 				}
 			}
 		}
+		#slideNav{
+			top: -150px;
+		}
 	}
 	@include breakpoint(($mobile-landscape)){
 		height: 40px;
 		.layout .elements{
 			padding-top: 20px;
+			top: -25px;
 			.element{
 				height: auto !important;
 				&.address{
 					display: none;
 				}
 			}
+		}
+		#slideNav{
+			top: -180px;
 		}
 	}
 	@include breakpoint(($tablet)){  //tablet

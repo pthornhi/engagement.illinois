@@ -1,16 +1,14 @@
 #imagebanner{
+	@include transition-duration(.75s);
 	@include clearfix;
 	position: relative;
 	top: 0;
 	margin:0 auto;
 	max-height: 300px;
-	text-align: center;
 	img{
 		min-width: 700px;
 	}
 	.bannertext{
-		@include transition-duration(1s);
-		@include transform(translateY(-160%));
 		font-size: 40px;
 		color: $light;
 		font-family: $font-banner-text;
@@ -18,11 +16,30 @@
 		line-height: 60px;
 		display: inline-block;
 		vertical-align: middle;
-		text-align: left;
-		width: auto;
+		width: 100%;
+		top: 30%;
+		position: absolute;
+		left: 0;
+		margin: 0;
+		text-align: center;
+		span {
+			display: block;
+		}
 	}
 }
+// ---------------------------------------------------------------------------------------------------
+// 								Repsonsive image banner 
+// ---------------------------------------------------------------------------------------------------
 #imagebanner{
+	@include breakpoint($mini){
+		margin: 88px auto 0;
+		.layout{
+			max-height: 200px;
+		}
+		.bannertext{
+			top: 0;
+		}
+	}
 	@include breakpoint($mobile-portrait){
 		.layout{
 			max-height: 200px;
@@ -30,7 +47,6 @@
 		.bannertext{
 			font-size: 23px;
 			line-height: 36px;
-			@include transform(translateY(-114%));
 		}
 	}
 	@include breakpoint($mobile-landscape){
@@ -40,7 +56,6 @@
 		.bannertext{
 			font-size: 26px;
 			line-height: 40px;
-			@include transform(translateY(-160%));
 		}
 	}
 	@include breakpoint($tablet){  //tablet
@@ -50,30 +65,27 @@
 		.bannertext{
 			font-size: 40px;
 			line-height: 52px;
-			@include transform(translateY(-150%));
 		}
 	}
 	@include breakpoint($desktop){
 		.bannertext{
 			font-size: 40px;
 			line-height: 60px;
-			@include transform(translateY(-180%));
 		}
 	}
 	@include breakpoint($superdesktop){
 		.bannertext{
 			font-size: 50px;
 			line-height: 60px;
-			left: 25%;
-			@include transform(translateY(-220%));
 		}
 	}
 	@include breakpoint($blowout){
 		.bannertext{
 			font-size: 50px;
 			line-height: 60px;
-			left: 25%;
-			@include transform(translateY(-280%));
 		}
 	}
 }
+// ---------------------------------------------------------------------------------------------------
+// 								End Repsonsive image banner 
+// ---------------------------------------------------------------------------------------------------

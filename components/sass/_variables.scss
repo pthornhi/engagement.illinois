@@ -10,11 +10,12 @@ $purple: #6C71C4;
 $dark: #000000;
 $light: #e8e9ea;
 $grey: #c6c8ca;
+$light-grey: #f1f1f1;
 $primary-text: lighten(#000000, 20);
 $lighter-text: lighten(#000000, 40);
 $watermark: lighten(#000000, 90);
 
-$bodyBackground: #c6c8ca;
+$bodyBackground: #ffffff;
 $pageBackground: #ffffff;
 $typeDefault : $dark;
 $navBackground : $blue;
@@ -57,9 +58,9 @@ $susy: (
 	output: float,
 	gutter-position: inside);	
 
-$mini: 0 320px;
+$mini: 0 380px;
 $mobile: 700px;
-$mobile-portrait: 0px 530px;
+$mobile-portrait: 380px 530px;
 $mobile-landscape: 530px 700px;
 $tablet: 700px 800px;
 $desktop: 800px 1200px;

@@ -1,0 +1,172 @@
+.ui-multiselect-menu.ui-widget {  //both dropdowns
+	width: auto !important;
+	background: #fff;
+	-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	ul.ui-multiselect-checkboxes {
+		right: 0px !important;
+		left: auto !important;
+		overflow: auto;
+		li {
+			white-space: nowrap;
+			label{
+				font-family: MuseoSans300,serif;
+				border: medium none !important;
+				font-weight: normal;
+				input{
+					
+				}	
+				span{
+					background: none;
+					color: $typeDefault;
+					font-family: $font-greybody-text;
+					font-weight: normal;
+					font-size: 11px;					
+				}
+				&.ui-state-hover{
+					background: $light-grey;
+					color: $typeDefault;
+					font-family: $font-greybody-text;
+					border: none !important;
+					font-weight: normal;
+					input{
+						-moz-appearance:none;
+						-webkit-appearance:none;
+						-o-appearance:none;
+						border: none;
+						border-style: none !important;
+					} 
+					span {
+						color: $blue;
+					}
+				}
+			}
+		}
+	}
+}
+
+.view-filters{
+	form .views-exposed-form{
+		float: right;
+		width: 717px;
+		white-space: nowrap;
+		.views-widget{
+			button.ui-multiselect{
+				font-family: $font-greybody-text;
+				background: $blue;
+				height: $filter_height;
+				color: $light;
+			}
+		}
+		.views-widget-filter-keys{ //search box
+			width: 34%;
+			position: relative;
+			label{
+				text-align: left;
+				display: block;
+				width: 100%;
+				color: lighten($primary-text, 25);
+				position: absolute;
+				font-family: $font-greybody-text;
+				font-size: 16px;
+				line-height: $filter_height + 3;
+				margin-left: 10px;
+			}
+			.views-widget{
+				width: 100%;
+				.form-item {
+					width: 100%;
+					input{
+						width: 100%;
+						height: $filter_height;
+						font-size: 23px;
+						color: $lighter-text;
+						background-color: #fff;
+						border: 1px solid $grey;
+					}
+				}
+			}
+		}
+		.views-exposed-widget { // the whole group
+			margin-right: 1px;
+			padding: 0;
+			padding-top: 0;
+			margin-bottom: $filter_height/2;
+			height: $filter_height;
+			color: $light;
+			input{
+				margin-top: 0;
+				@include sassy-button("flat", 0, 19px, $grey, $grey, $primary-text, $font-greybody-text, false);
+				padding: 8px 1.5em;
+				//@include sassy-button(gradient style, border radius, font size, first color, second color, text color, text style, auto hover)
+			}
+			
+			&.views-submit-button{ // apply button
+				margin: 0px 2px 10px 0;
+				width: 90px;
+				input{
+					height: $filter_height;
+					font-size: 14px;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+			&.views-reset-button{ // reset button
+				float: left;
+				margin-right: 0;
+				width: 90px;
+				height: $filter_height;
+				input{
+					height: $filter_height;
+					font-size: 14px;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+			&.views-widget-filter-field_colleges_and_schools_tid{ // colleges and schools dropdwon: ;
+				width: 200px;
+				.form-item button{
+					font-size: 14px !important;
+					width: 198px !important;
+					text-align: center;
+					height: $filter_height;
+					text-transform: uppercase;
+				}
+			}
+			&.views-widget-filter-field_tags_tid{ //tags dropdown
+				width: 87px;
+				margin-right: 2px;
+				.form-item button{
+					width: 85px !important;
+					text-align: center;
+					height: $filter_height;
+					font-size: 14px !important;
+					text-transform: uppercase;
+				}
+			}
+			&.views-widget-filter-field_media_type_tid{ //media dropdown
+				width: 87px;
+				margin-right: 2px;
+				.form-item button{
+					width: 85px !important;
+					text-align: center;
+					height: $filter_height;
+					font-size: 14px !important;
+					text-transform: uppercase;
+				}
+			}
+			&.views-upload-story{ //share your story button
+				float:right;
+				padding: 10px;
+				background: $orange;
+			}
+		}
+	}
+	#edit-field-tags-tid-wrapper,
+	#edit-field-colleges-and-schools-tid-wrapper,
+	#edit-field-media-type-tid-wrapper {
+		label{
+			display: none;
+		}
+	}
+}
