@@ -38,13 +38,17 @@
       <?php print $header; ?>
     </div>
   <?php endif; ?>
-
+  <div id="filter-intro">FILTER BY</div>
   <?php if ($exposed): ?>
     <div class="view-filters">
       <?php print $exposed; ?>
     </div>
   <?php endif; ?>
-
+<?php
+			if(isset($_GET['destination'])  && $_GET['destination'] === 'node/add/node-gallery-item'){
+				print "<div class='action-info'>Your story has been submitted for approval and should be viewable soon. Thank you for your contribution.</div>";
+			}
+?>
   <?php if ($attachment_before): ?>
     <div class="attachment attachment-before">
       <?php print $attachment_before; ?>

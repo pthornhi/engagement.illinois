@@ -1,8 +1,19 @@
 .view-gallery{
+	.action-info {
+		color:$primary-text;
+		background: $hover-orange;
+		padding: 10px;
+		border: 1px solid $orange;
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		@include border-radius(5px);
+	}
 	.view-content{
 		@include clearfix;
-		margin-left: calc((100% - 840px + 20px) / 2);
-		width: 1260px;
+		//margin-left: calc((100% - 840px + 20px) / 2);
+		//width: 100%;
+		margin: 0 auto;
 		.masonry-item{
 			//float: left;
 			background: $light;
@@ -11,27 +22,41 @@
 			font-size: 12px;
 			padding: 0;
 			margin: 20px 20px 0 0;
-			width: 400px;
+			width: 375px;
 			float: left;
 			overflow: hidden;
 			img{
 				height: auto !important;
 			}
-			.views-field-title, .views-field-body{
-				padding: 20px 40px;
+			.views-field-body{
+				padding: 0 20px 40px;
 			}
 			.views-field-title{
 				font-weight: normal;
-				font-size: 150%;
+				font-size: 2em;
 				line-height: 150%;
 				font-family: $font-greybody-text;
+				padding: 5% 5% 5%;
 			}
+		}
+		.views-field-field-gallery-audio{
+			audio{
+				margin: 10% 5% 0px;
+				width: 90%;
+			}
+		}
+		.views-field-field-gallery-video {
+			
 		}
 	}
 }
 		//////////////////////////
 		////	filter stuff /////
 		//////////////////////////
+#filter-intro {
+	font-size: .85em;
+	font-weight: bold;
+}
 .view-gallery{
 	margin-top: 20px;
 	.view-filters{
@@ -48,6 +73,7 @@
 		//////////////////////////////
 		////	end filter stuff /////
 		//////////////////////////////
+		
 /************************************************************************************
 //				 RESPONSIVE GALLERY LAYOUT 
 ************************************************************************************/
@@ -90,7 +116,7 @@
 	@include breakpoint($blowout){
 		.view-content{
 			.masonry-item{
-				width: 30%;
+				//width: 30%;
 			}
 		}		
 	}

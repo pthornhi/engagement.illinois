@@ -1,3 +1,15 @@
+.gallery-form{
+	.page-title{
+		margin-left: 40px;
+	}
+}
+#node-admin-content{
+	.exposed-filters{
+		.form-item-type{
+			display: none;
+		}
+	}	
+}
 .node-form{
 	margin: 0 40px;
 	* {
@@ -6,8 +18,47 @@
 	.form-item {
 		border: 1px dotted $grey;
 		padding: 10px;
+		.file-icon{
+			width: auto;
+		}
+		.image-widget{
+			.image-widget-data{
+				.file{
+					display: none;
+				}
+			}
+		}
+	}
+	.vertical-tabs{
+		.form-type-textfield{
+			input {
+				width: auto;
+			}
+		}
+		#edit-options{
+			.form-item-promote{
+				display: none;
+			}
+		}
+	}
+	#edit-group_alumn_info{
+		.fieldset-wrapper{
+			.form-item {
+				border: none;
+				float: left;
+				width: 46%;
+				margin-right: 4%;
+			}
+			#edit-field-alumn-name{
+				
+			}
+		}
+	}
+	#edit-body-und-0-format-help {
+		display: none;
 	}
 }
+
 .not-logged-in .form-item-field-upload-button-und{
 	display: none;
 }

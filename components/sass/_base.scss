@@ -22,6 +22,11 @@ body a, body a:visited{color: $link-blue;text-decoration: none;}
 #sticky-wrapper{height: 0 !important;}
 img{width: 100%;}
 #page-title{color: $orange;}
+.logged-in {
+	.page-title {
+		margin-left: 40px;
+	}
+}
 #{headings(1)}{font-family: $font-secondarypage-head-text;font-size: 35px;margin: 40px 0;line-height: 39px;}
 #{headings(2,2)}{font-family: $font-secondarypage-head-text;font-size: 23px;margin: 0 0 20px 0;}
 #{headings(3,5)}{font-family: $font-secondarypage-head-text;font-size: 18px;}

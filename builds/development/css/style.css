@@ -146,6 +146,9 @@ img {
 #page-title {
   color: #e84b38; }
 
+.logged-in .page-title {
+  margin-left: 40px; }
+
 h1 {
   font-family: Museo-500, serif;
   font-size: 35px;
@@ -2452,6 +2455,9 @@ body.pmt-open button.close-menu {
   #timeline footer .elements .element {
     display: inline-block; }
 
+.html.not-front footer .layout {
+  margin-top: 15px; }
+
 footer {
   position: relative;
   color: #666666;
@@ -2858,8 +2864,6 @@ body #timeline #time-selector {
   .page-timeline .views-widget-filter-keys {
     width: 76% !important; } }
 
-.logged-in .page-title {
-  margin-left: 60px; }
 .logged-in #timeline-date-node-form {
   width: 90%;
   margin: 20px auto;
@@ -2953,9 +2957,19 @@ body #timeline #time-selector {
       font-size: 32px;
       line-height: 36px; } }
 
+.view-gallery .action-info {
+  color: #333333;
+  background: #ed7466;
+  padding: 10px;
+  border: 1px solid #e84b38;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
 .view-gallery .view-content {
-  margin-left: calc((100% - 840px + 20px) / 2);
-  width: 1260px; }
+  margin: 0 auto; }
   .view-gallery .view-content:before, .view-gallery .view-content:after {
     content: '';
     display: table; }
@@ -2968,18 +2982,26 @@ body #timeline #time-selector {
     font-size: 12px;
     padding: 0;
     margin: 20px 20px 0 0;
-    width: 400px;
+    width: 375px;
     float: left;
     overflow: hidden; }
     .view-gallery .view-content .masonry-item img {
       height: auto !important; }
-    .view-gallery .view-content .masonry-item .views-field-title, .view-gallery .view-content .masonry-item .views-field-body {
-      padding: 20px 40px; }
+    .view-gallery .view-content .masonry-item .views-field-body {
+      padding: 0 20px 40px; }
     .view-gallery .view-content .masonry-item .views-field-title {
       font-weight: normal;
-      font-size: 150%;
+      font-size: 2em;
       line-height: 150%;
-      font-family: MuseoSans300, serif; }
+      font-family: MuseoSans300, serif;
+      padding: 5% 5% 5%; }
+  .view-gallery .view-content .views-field-field-gallery-audio audio {
+    margin: 10% 5% 0px;
+    width: 90%; }
+
+#filter-intro {
+  font-size: .85em;
+  font-weight: bold; }
 
 .view-gallery {
   margin-top: 20px; }
@@ -2992,10 +3014,6 @@ body #timeline #time-selector {
 /************************************************************************************
 //				 RESPONSIVE GALLERY LAYOUT 
 ************************************************************************************/
-@media (min-width: 1600px) and (max-width: 3200px) {
-  .view-gallery .view-content .masonry-item {
-    width: 30%; } }
-
 /************************************************************************************
 //				END RESPONSIVE GALLERY LAYOUT 
 ************************************************************************************/
@@ -3146,6 +3164,12 @@ body #timeline #time-selector {
 .view-filters #edit-field-media-type-tid-wrapper label {
   display: none; }
 
+.gallery-form .page-title {
+  margin-left: 40px; }
+
+#node-admin-content .exposed-filters .form-item-type {
+  display: none; }
+
 .node-form {
   margin: 0 40px; }
   .node-form * {
@@ -3153,8 +3177,46 @@ body #timeline #time-selector {
   .node-form .form-item {
     border: 1px dotted #c6c8ca;
     padding: 10px; }
+    .node-form .form-item .file-icon {
+      width: auto; }
+    .node-form .form-item .image-widget .image-widget-data .file {
+      display: none; }
+  .node-form .vertical-tabs .form-type-textfield input {
+    width: auto; }
+  .node-form .vertical-tabs #edit-options .form-item-promote {
+    display: none; }
+  .node-form #edit-group_alumn_info .fieldset-wrapper .form-item {
+    border: none;
+    float: left;
+    width: 46%;
+    margin-right: 4%; }
+  .node-form #edit-body-und-0-format-help {
+    display: none; }
 
 .not-logged-in .form-item-field-upload-button-und {
+  display: none; }
+
+.node .field-name-field-tags .field-items:before, .node .field-name-field-tags .field-items:after,
+.node .field-name-field-colleges-and-schools .field-items:before,
+.node .field-name-field-colleges-and-schools .field-items:after {
+  content: '';
+  display: table; }
+.node .field-name-field-tags .field-items:after,
+.node .field-name-field-colleges-and-schools .field-items:after {
+  clear: both; }
+.node .field-name-field-tags .field-items .field-item,
+.node .field-name-field-colleges-and-schools .field-items .field-item {
+  width: auto;
+  float: left;
+  margin: 2px 1px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #333333;
+  padding: 0 10px;
+  color: #c6c8ca;
+  font-size: .85em; }
+.node .field-name-field-media-type {
   display: none; }
 
 .ui-multiselect {

@@ -120,40 +120,39 @@ $filter_height: 45px;
 		}
 	}
 }
-	
-	.view-content{
-		#timelinejs-timeline-page{
-			#storyjs-timeline{
-				.vco-feature .vco-slider{
-					.slider-container{
-						.slider-item-container{
-							.slider-item{
-								.content-container{
-									.media{
-										
-									}
-									.text{
-										.container{
-											position: relative;
-											padding: 15px;
-											.date {
-												
-											}
-											.slide-tag{
-												position: absolute;
-												bottom: -10px;
-												background: none;
-												left: 0;
-												ul {
-													list-style-type: none;
-													li {
-														color: $primary-text;
-														display: inline-block;
-														margin-right: 3px;
-														background: $light-grey;
-														padding: 5px 10px;
-														@include border-radius(10px);
-													}
+
+.view-content{
+	#timelinejs-timeline-page{
+		#storyjs-timeline{
+			.vco-feature .vco-slider{
+				.slider-container{
+					.slider-item-container{
+						.slider-item{
+							.content-container{
+								.media{
+									
+								}
+								.text{
+									.container{
+										position: relative;
+										padding: 15px;
+										.date {
+											
+										}
+										.slide-tag{
+											position: absolute;
+											bottom: -10px;
+											background: none;
+											left: 0;
+											ul {
+												list-style-type: none;
+												li {
+													color: $primary-text;
+													display: inline-block;
+													margin-right: 3px;
+													background: $light-grey;
+													padding: 5px 10px;
+													@include border-radius(10px);
 												}
 											}
 										}
@@ -163,16 +162,17 @@ $filter_height: 45px;
 						}
 					}
 				}
-				.vco-navigation {
-					.timenav-background {
-						.timenav-tag {
-							display: none;
-						}
+			}
+			.vco-navigation {
+				.timenav-background {
+					.timenav-tag {
+						display: none;
 					}
 				}
 			}
 		}
 	}
+}
 	
 	.vco-slider .slider-item .content .content-container .media .media-wrapper .media-container .media-frame, .vco-slider .slider-item .content .content-container .media .media-wrapper .media-container .media-image img {
 		background-color: #FFF;
@@ -215,9 +215,6 @@ $filter_height: 45px;
 // TIMELINE ADMIN FORM
 // --------------------------------------------------------------
 .logged-in {
-	.page-title {
-		margin-left: 60px;
-	}
 	#timeline-date-node-form{
 		width: 90%;
 		margin: 20px auto;

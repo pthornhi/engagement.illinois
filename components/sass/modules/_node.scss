@@ -1,0 +1,31 @@
+		//////////////////////////
+		////	nodes 		/////
+		//////////////////////////
+.node{
+	.field-name-field-tags,
+	.field-name-field-colleges-and-schools{
+		.field-items{
+			@include clearfix;
+			.field-item{
+				width: auto;
+				float: left;
+				margin: 2px 1px;
+				@include border-radius(10px);
+				background: $dark-grey;
+				padding: 0 10px;
+				color: $grey;
+				font-size: .85em;
+			}
+		}
+	}
+	.field-name-field-media-type{
+		display: none;
+	}
+}
+#colorbox #cboxContent{
+	//padding: 0 10px;
+}
+
+		//////////////////////////////
+		////		end nodes 	 /////
+		//////////////////////////////

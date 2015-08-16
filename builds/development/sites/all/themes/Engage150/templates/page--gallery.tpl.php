@@ -56,11 +56,6 @@
 					
 			 <!-- PAGE CONTENT --> 
 			<div class="page" id="gallery">
-				<?php 
-					if(user_is_logged_in()){
-						print "<h1 class='page-title'>".$title."</h1>";
-					}
-				?>
 				<?php print render($page['content']); ?>
 			</div> <!-- page -->
 		    

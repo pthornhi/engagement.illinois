@@ -2,7 +2,8 @@
 
 Drupal.behaviors.initColorbox = {
   attach: function (context, settings) {
-    if (!$.isFunction($.colorbox) || typeof settings.colorbox === 'undefined') {
+    //if (!$.isFunction($.colorbox) || typeof settings.colorbox === 'undefined') {
+	if (!$.isFunction($('a, area, input', context).colorbox) || typeof settings.colorbox === 'undefined') {
       return;
     }
 

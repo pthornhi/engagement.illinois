@@ -8,6 +8,13 @@
 		}
 	}
 }
+.html.not-front {
+	footer {
+		.layout {
+			margin-top: 15px;
+		}
+	}
+}
 footer{
 	position: relative;
 	color: $lighter-text;
