@@ -27,9 +27,6 @@ nav{
 		.logo-item{
 				position: relative;
 				top: -33px;
-				#nav-logo{
-					@include navlogo;
-				}
 				@include clearfix;
 				width: 165px;
 				height: 1px;

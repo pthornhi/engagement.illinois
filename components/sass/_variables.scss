@@ -3,6 +3,7 @@ $blue: #15284a;
 $green: #45B29D;
 $yellow: #EFC94C;
 $orange: #e84b38;
+$white: #ffffff;
 $hover_orange: lighten(#e84b38, 10);
 $red: #DF4848;
 $pink: #CD0069;
@@ -15,6 +16,13 @@ $dark-grey: lighten(#000000, 20);
 $primary-text: lighten(#000000, 20);
 $lighter-text: lighten(#000000, 40);
 $watermark: lighten(#000000, 90);
+
+$gallColor0: $orange;
+$gallColor1: $blue;
+$gallColor2: $grey;
+$gallColor3: #f29836;
+$gallColor4: lighten(#172b4c, 10);
+$gallColor5: lighten($grey, 10);
 
 $bodyBackground: #ffffff;
 $pageBackground: #ffffff;

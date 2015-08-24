@@ -45,7 +45,7 @@ p { }
 	  position: relative;
 	  max-width: 1200px;
 	  margin: 0 auto;	
-	#page-title {position: relative;left: -5px;}
+	#page-title {position: relative;left: 0;}
 }
 
 .list-links li a .icon{ @include list-link-icon;}

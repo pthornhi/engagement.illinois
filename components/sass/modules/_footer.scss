@@ -19,7 +19,7 @@ footer{
 	position: relative;
 	color: $lighter-text;
 	height: 95px;
-	margin: -16px auto 0 auto;
+	margin: 70px auto 0 auto;
 	background: $pageBackground;
 	.layout{
 		max-width: $max-width;
@@ -28,7 +28,7 @@ footer{
 			@include display-flex(inline-flex);
 			@include justify-content(center);
 			width: 100%;
-			padding-top: 70px;
+			padding-top: 40px;
 			position: relative;
 			.element{
 				font-size: 12px;

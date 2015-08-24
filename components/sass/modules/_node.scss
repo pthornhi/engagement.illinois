@@ -2,6 +2,9 @@
 		////	nodes 		/////
 		//////////////////////////
 .node{
+	.field-name-field-tags{
+		margin-top: 20px;
+	}
 	.field-name-field-tags,
 	.field-name-field-colleges-and-schools{
 		.field-items{
@@ -11,10 +14,12 @@
 				float: left;
 				margin: 2px 1px;
 				@include border-radius(10px);
-				background: $dark-grey;
+				background: $grey;
 				padding: 0 10px;
-				color: $grey;
-				font-size: .85em;
+				color: $primary-text;
+				font-size: .55em;
+				height: 15px;
+				line-height: 17px;
 			}
 		}
 	}

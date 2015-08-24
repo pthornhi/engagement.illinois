@@ -1,6 +1,18 @@
 .gallery-form{
 	.page-title{
-		margin-left: 40px;
+		max-width: 1000px;
+		margin: 40px auto;
+		color: $orange;
+	}
+	#form-instructions{
+		max-width: 1000px;
+		margin: 0 auto 20px auto;	
+	}
+	#edit-actions {
+		text-align: center;
+		input{
+			font-size: 16px;
+		}
 	}
 }
 #node-admin-content{
@@ -10,14 +22,48 @@
 		}
 	}	
 }
+.captcha.form-wrapper{
+	padding: 10px;
+	width: 40%;
+	margin: 0 auto;
+	background: $light-grey;
+	legend{
+		position: relative;
+		top: 13px;
+		border-top: 1px dotted $grey;
+	}
+	.fieldset-wrapper{
+		text-align: center;
+		img{
+			width: auto;
+			border: 1px solid;
+		}
+		.form-item{
+			float: none;
+		    margin: 0;
+		    padding: 0;
+		    width: auto;
+		    text-align: center;
+		    label, .description{
+			    text-align: center;
+		    }
+		}
+	}
+}
 .node-form{
-	margin: 0 40px;
+	margin: 0 auto;
+	max-width: 1000px;
 	* {
 		text-align: left;
 	}
-	.form-item {
+	fieldset{
 		border: 1px dotted $grey;
+	}
+	.form-item {
 		padding: 10px;
+		width: 48%;
+		margin-right: 2%;
+		float: left;
 		.file-icon{
 			width: auto;
 		}
@@ -25,6 +71,119 @@
 			.image-widget-data{
 				.file{
 					display: none;
+				}
+			}
+		}
+		input{
+			@include border-radius(5px);
+			height: 40px;
+			background: $light-grey;
+			font-size: 16px;
+			width: 100%;
+		}
+		&.form-item-title{
+			width: 100%;
+			float: none;
+			padding-top: 0;
+			margin-top:0;
+			input{
+				width: 100%;
+			}
+		}
+	}
+	.field-name-field-media-type{
+		float: none;
+		width: 285px;
+		@include clearfix;
+		margin: 0 auto;
+		.form-item{
+			width: 100%;
+			margin:0;
+			label{
+				display: none;
+			}
+			#edit-field-media-type-und{
+				@include clearfix;
+				.form-item{
+					margin:0 7px;
+					width: 50px;
+					float: left;
+					position: relative;
+					padding: 9px 10px 0 10px;
+					label{
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+					input{
+						width: 60%;
+					}
+				}
+			}
+		}
+	}
+	.field-name-body{
+		position: relative;
+		.form-item{
+			width: 100%;
+			float: none;
+			.field-edit-link{
+				display: none;
+			}
+			textarea{
+				font-size: 16px;
+			}
+		}
+		.description{
+			position: absolute;
+			top: 5px;
+			left: 104px;
+			font-size: .75em;
+			color: $grey;
+		}
+		fieldset#edit-body-und-0-format{
+			display: none;
+		}
+	}
+	#edit-field-gallery-image{
+		width: 100%;
+		float: none;
+		@include clearfix;
+		.form-item{
+			margin: 0 auto;
+			float: none;
+		}
+	}
+	#edit-field-gallery-video{
+		width: 100%;
+		float: none;
+		@include clearfix;
+		.form-item{
+			margin: 0 auto;
+			float: none;
+		}	
+	}
+	#edit-field-gallery-audio{
+		width: 100%;
+		float: none;
+		@include clearfix;
+		.form-item{
+			margin: 0 auto;
+			float: none;
+		}	
+	}
+	#edit-field-tags, #edit-field-colleges-and-schools{
+		@include clearfix;
+		width: 100%;
+		.form-item{
+			width: 100% !important;
+			button{
+				height: 40px;
+				width: 100% !important;
+				span {
+					color: $primary-text;
+					font-family: $font-greybody-text;
 				}
 			}
 		}
@@ -38,19 +197,6 @@
 		#edit-options{
 			.form-item-promote{
 				display: none;
-			}
-		}
-	}
-	#edit-group_alumn_info{
-		.fieldset-wrapper{
-			.form-item {
-				border: none;
-				float: left;
-				width: 46%;
-				margin-right: 4%;
-			}
-			#edit-field-alumn-name{
-				
 			}
 		}
 	}

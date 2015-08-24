@@ -30,13 +30,6 @@ $(document).ready(function ($) {
 		        random: true
 			});
 		});
-		/* auto: false,
-        pager: true,
-        nav: true,
-        speed: 500,
-        maxwidth: 800,
-        namespace: "centered-btns"
-        */
         
 		//alter the view media types filter to be a dropdown button
 		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-media-type-tid').length > 0){
@@ -97,7 +90,7 @@ $(document).ready(function ($) {
 												uncheckAllText: 'Uncheck all',
 												noneSelectedText: 'Colleges & Schools',
 												selectedText: '# selected',
-												selectedList: 2,
+												selectedList: 0,
 												show: null,
 												hide: null,
 												autoOpen: false,
@@ -106,18 +99,45 @@ $(document).ready(function ($) {
 												position: {
 												      my: 'left bottom',
 												      at: 'left top'
-												   },
-
-												//click: function(event, ui){
-												//	$callback.append(ui.value + ' ' + (ui.checked ? 'checked' : 'unchecked') );
-												//	},
-											   optgrouptoggle: function(event, ui){
-											      var values = $.map(ui.inputs, function(checkbox){
-											         return checkbox.value;
-											      }).join(', ');
-											      
-											      $callback.html('<strong>Checkboxes ' + (ui.checked ? 'checked' : 'unchecked') + ':</strong> ' + values);
-											   }
+												   }
+											    });
+		}
+		//alter the tags in node edit form to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('.form-item-field-tags-und').length > 0){
+			$('.form-item-field-tags-und select').multiselect({
+												header: false,
+												height: 250,
+												minWidth: 315,
+												classes: '',
+												checkAllText: 'Check all',
+												uncheckAllText: 'Uncheck all',
+												noneSelectedText: '',
+												selectedText: '# selected',
+												selectedList: 8,
+												show: null,
+												hide: null,
+												autoOpen: false,
+												multiple: true,
+												appendTo: 'body',
+											    });
+		}
+		//alter the colleges and school in node edit form to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('.form-item-field-colleges-and-schools-und').length > 0){
+			$('.form-item-field-colleges-and-schools-und select').multiselect({
+												header: false,
+												height: 250,
+												minWidth: 315,
+												classes: '',
+												checkAllText: 'Check all',
+												uncheckAllText: 'Uncheck all',
+												noneSelectedText: '',
+												selectedText: '# selected',
+												selectedList: 8,
+												show: null,
+												hide: null,
+												autoOpen: false,
+												multiple: true,
+												appendTo: 'body',
 											    });
 		}
 		
@@ -136,77 +156,11 @@ $(document).ready(function ($) {
 				}
 			});
 		}
-		/* $('nav .layout .navlist').on('click', function(){
-			$(this).parent().toggleClass( 'open' );
-			$('.nav-item').animate({
-								visibility: 'visible',
-								height: '40px'
-							}, 500, function(){
-								
-							});
-						
-		}); */
 		
 		//make sticky greybox and nav
 		$('#sticky').sticky({topSpacing:0});
 		
-		
-		//makes the dropdown for time selectors on the timeline page
-		// this was the old design
-		/* $('#time-selector #time-span').on('click', function(){
-			var NoUnits = $(this).find('#time-units li').length;
-			var dropdownHeight = (NoUnits * 30)-13;
-			if($('#time-units').height() === 0){
-				$('#time-units li').css('border-bottom', '1px solid #ccc');
-				$(this).find('#time-units').animate({
-					height: dropdownHeight,
-				}, 500);
-			} else {
-				$('#time-units li').css('border-bottom', '0');
-				$(this).find('#time-units').animate({
-					height: 0,
-				}, 500);	
-			}
-		});
-		
-	    $('#time-selector #time-units .time a').on('click', function (event) {
-		    event.preventDefault();
-		    var loc_to_go = $(this).text();
-			var index = $('.time').index($(this).parent());
-			var targetPosition = $($('#'+loc_to_go)).offset().top-(200);
-	        $('html,body').animate({ scrollTop: targetPosition}, 'slow');
-	    });
 
- 
-		//build the next previous navigation for the timeline details pages
-		if($('#timeline-detail').length > 0){
-			var currentPath = (window.location.pathname);
-			var pageName = currentPath.substring(location.pathname.lastIndexOf('/') + 1);
-			var dataArray = $('#timeline-detail').attr('data-timeline_section');
-			var currentArray = window.eval(dataArray);
-			var arrayLength = currentArray.length;
-			var prev,
-				next;
-			for (var i = 0; i < arrayLength; i++) {
-			    if(pageName === (currentArray[i])){
-				    prev = (currentArray[i-1]);
-				    next = (currentArray[i+1]);
-				}
-			}
-			if(typeof prev !== 'undefined'){
-				$('#nav-left a').attr('href', prev);
-			} else {
-				$('#nav-left img').hide();
-				$('#nav-left').html('&nbsp;');
-			}
-			if(typeof next !== 'undefined'){
-				$('#nav-right a').attr('href', next);
-			} else {
-				$('#nav-right img').hide();
-				$('#nav-right').html('&nbsp;');
-			}
-			
-		} */ 
 		//control font-size in titlebox of greybar
 		if($('#titlebox').length > 0){
 			$('#titlebox').flowtype({
@@ -231,14 +185,22 @@ $(document).ready(function ($) {
 				fontRatio : 35
 			});
 		}
-		//control font-size in exposed filter buttons
-		/* if($('.views-exposed-widget input').length > 0){
-			$('.views-exposed-widget input').flowtype({
-				minFont : 12,
-				maxFont : 50,
-				fontRatio : 40
+		
+		//change the text on the gallery item save button to submit
+		$('#edit-actions input').val('Submit');
+		
+		//this generates classes for the five different timeline styles
+		if($('.owl-wrapper').length > 0){
+			var owl_items = $('.owl-wrapper .owl-item');
+			var i = 0;
+			$.each(owl_items, function(index){
+				if(i === 6){
+					i = 0;
+				} 
+				$(this).addClass('item-style'+i);
+				i++;
 			});
-		} */
+		}
  /**
  * The nav stuff
  */

@@ -5,6 +5,92 @@ $event-height: 120px;
 	}
 	.right-col {
 		width: 80%;
+		border-bottom: none;
+	}
+	.story.one{
+		.right-col{
+			background: url('/images/events/backgrounds/one.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.two{
+		.right-col{
+			background: url('/images/events/backgrounds/two.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.three{
+		.right-col{
+			background: url('/images/events/backgrounds/three.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.four{
+		.right-col{
+			background: url('/images/events/backgrounds/four.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.five{
+		.right-col{
+			background: url('/images/events/backgrounds/five.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.six{
+		.right-col{
+			background: url('/images/events/backgrounds/six.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.seven{
+		.right-col{
+			background: url('/images/events/backgrounds/seven.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.eight{
+		.right-col{
+			background: url('/images/events/backgrounds/eight.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.nine{
+		.right-col{
+			background: url('/images/events/backgrounds/nine.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.ten{
+		.right-col{
+			background: url('/images/events/backgrounds/ten.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.eleven{
+		.right-col{
+			background: url('/images/events/backgrounds/eleven.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.twelve{
+		.right-col{
+			background: url('/images/events/backgrounds/twelve.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.thirteen{
+		.right-col{
+			background: url('/images/events/backgrounds/thirteen.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.fourteen{
+		.right-col{
+			background: url('/images/events/backgrounds/fourteen.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.fifteen{
+		.right-col{
+			background: url('/images/events/backgrounds/fifteen.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.sixteen{
+		.right-col{
+			background: url('/images/events/backgrounds/sixteen.jpg') no-repeat 0 0 transparent;
+		}
+	}
+	.story.seventeen{
+		.right-col{
+			background: url('/images/events/backgrounds/seventeen.jpg') no-repeat 0 0 transparent;
+		}
 	}
 	.story{
 		margin: 0;
@@ -23,6 +109,13 @@ $event-height: 120px;
 			padding: 0;
 			width: 77%;
 			height: $event-height;
+			margin-bottom: 20px;
+			overflow: hidden;
+			
+			a {
+				display: table;
+				width: 100%;
+			}
 			#page-title {
 				
 			}
@@ -36,23 +129,28 @@ $event-height: 120px;
 				width: 125px;
 				height: ($event-height)-1;
 				padding: 21px 0;
+				display: table-cell;
+				vertical-align: middle;
 				.month {
 					text-transform: uppercase;
-					
+					font-size: 22px;
 				}
 				.day {
 					font-family: $font-large-numbers;
-					font-size: 40px;
+					font-size: 30px;
 				}
 				.year {
-					
+					font-size: 22px;
+					margin-top: 4px;
 				}
 			}
 			.event-description{
 				margin-left: 150px;
-				//@include vertical-align;
-				transform: translateY(50%);
+				display: table-cell;
+				vertical-align: middle;
+				padding-left: 4%;
 				color: $primary-text;
+				width: 100%;
 				.location{
 					color: $link-blue;
 					font-family: $font-blue-location;
@@ -80,7 +178,16 @@ $event-height: 120px;
 // RESPONSIVE LAYOUT --------------------------------------------------------------
 #events{
 	.layout{
-		@include breakpoint(($mobile-portrait)){
+		@include breakpoint(($mini)){
+			.story .left-col{
+				width: 0;
+			}
+			.story .right-col {
+				width: 100%;
+				.event-description {
+					font-size: .85em;
+				}
+			}
 			.event-date{
 				.month{
 					
@@ -94,7 +201,54 @@ $event-height: 120px;
 			}
 			.right-col{
 				@include container(16);
-				height: auto;
+				.event-date{
+					@include span(4 of 16 first);
+					font-size: .75em;
+					.month{
+						
+					}
+					.day{
+						font-size: 32px;;
+					}
+					.year{
+						
+					}
+				}
+				.event-description{
+					@include span(11 of 16 last);
+					margin: 10px 0 0 0;
+					font-size: .85em;
+					top: 0;
+					transform: none;
+					.location{
+						font-size: 1.25em !important;
+					}
+				}
+			}
+		}
+		@include breakpoint(($mobile-portrait)){
+			.story .left-col{
+				width: 0;
+			}
+			.story .right-col {
+				width: 100%;
+				.event-description {
+					font-size: .85em;
+				}
+			}
+			.event-date{
+				.month{
+					
+				}
+				.day{
+					
+				}
+				.year{
+					
+				}
+			}
+			.right-col{
+				@include container(16);
 				.event-date{
 					@include span(4 of 16 first);
 					font-size: .75em;

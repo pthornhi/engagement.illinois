@@ -1,3 +1,9 @@
+body #wrapper #gallery.page{
+	padding: 0;
+}
+table#taxonomy{
+	width: 100%;
+}
 .view-gallery{
 	.action-info {
 		color:$primary-text;
@@ -54,12 +60,18 @@
 		////	filter stuff /////
 		//////////////////////////
 #filter-intro {
-	font-size: .85em;
+	font-size: 0.75em;
 	font-weight: bold;
+	color: $primary-text;
+	margin-bottom: 10px;
 }
 .view-gallery{
 	margin-top: 20px;
+	position: relative;
+	left: 10px;
 	.view-filters{
+		margin: 0 auto;
+		position: relative;
 		form .views-exposed-form{
 			width: 100%;
 			float: none;
@@ -67,6 +79,11 @@
 	}
 	#alumn-upload-image {
 		float: left;
+		background: #fff !important;
+		box-shadow: none;
+		.masonry-item {
+			background: #fff !important;
+		}
 	}
 }
 
@@ -78,35 +95,75 @@
 //				 RESPONSIVE GALLERY LAYOUT 
 ************************************************************************************/
 .view-gallery{
-	@include breakpoint(($mobile-portrait)){
+	@include breakpoint(($mini)){
+		.view-filters{
+			width: 100%;
+			padding: 0 44px;
+			left: -8px;
+			margin-top: 80px;
+			.views-exposed-form .views-exposed-widget.views-upload-story{
+				float: left;
+			}
+		}
 		.view-content{
 			.masonry-item{
-				//width: 100%;
+				
+			}
+		}		
+	}
+	@include breakpoint(($mobile-portrait)){
+		.view-filters{
+			width: 100%;
+			padding: 0 44px;
+			left: -8px;
+		}
+		.view-content{
+			.masonry-item{
+				
 			}
 		}		
 	}
 	@include breakpoint(($mobile-landscape)){
+		.view-filters{
+			width: 380px;
+			left: -10px;
+		}
 		.view-content{
 			.masonry-item{
-				//width: 45%;
+				
 			}
 		}		
 	}
 	@include breakpoint(($tablet)){  //tablet
+		.view-filters{
+			width: 770px;
+			left: -10px;
+		}
 		.view-content{
 			.masonry-item{
-				//width: 45%;
+				&.views-row-odd{
+					margin-right: 0 !important;
+				}
 			}
 		}		
 	}
 	@include breakpoint($desktop){
+		.view-filters{
+			width: 775px;
+			left: -10px;
+			position: relative;
+		}
 		.view-content{
 			.masonry-item{
-				//width: 30%;
+				
 			}
 		}		
 	}
 	@include breakpoint($superdesktop){
+		.view-filters{
+			width: 98%;
+			left: -8px;
+		}
 		.view-content{
 			.masonry-item{
 				//width: 30%;

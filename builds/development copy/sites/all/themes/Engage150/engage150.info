@@ -1,0 +1,12 @@
+name = Engage 150
+description = A theme to fit into the Engagement 150 Illinois Site
+core = 7.x
+screenshot = screenshot.png
+
+stylesheets[all][] = /css/style.css
+
+regions[banner] = Page Banner
+regions[content] = Content
+
+
+
