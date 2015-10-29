@@ -929,7 +929,8 @@ Drupal.overlay.makeDocumentUntabbable = function (context) {
   // child document. The duplicate copy in the underlying document is only for
   // assisting screen-reader users navigating the document with reading commands
   // that follow markup order rather than tab order.
-  if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  //if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  if ($.browser.msie && parseInt($.browser.version, 10) < 8) {
     $('#overlay-disable-message a', context).attr('tabindex', -1);
     return;
   }
@@ -972,7 +973,8 @@ Drupal.overlay.makeDocumentTabbable = function (context) {
   // Manipulating tabindexes is unacceptably slow in IE6 and IE7. In those
   // browsers, the underlying page was never made unreachable via tab, so
   // there is no work to be done here.
-  if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  //if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  if ($.browser.msie && parseInt($.browser.version, 10) < 8) {
     return;
   }
 
@@ -982,7 +984,8 @@ Drupal.overlay.makeDocumentTabbable = function (context) {
   // Make the underlying document tabbable again by removing all existing
   // tabindex attributes.
   var $tabindex = $('[tabindex]', context);
-  if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  //if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 8) {
+  if ($.browser.msie && parseInt($.browser.version, 10) < 8){
     // removeAttr('tabindex') is broken in IE6-7, but the DOM function
     // removeAttribute works.
     var i;

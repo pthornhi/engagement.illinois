@@ -580,7 +580,8 @@ class views_timelinejs_plugin_style_timelinejs extends views_plugin_style {
             if (is_array($value)) {
               $value = array_shift($value);
               // Allow for imagefield image style selection.
-              if ($this->view->field[$tmp['fieldname']]->options['settings']['image_style'] && !empty($value['uri'])) {
+              //if ($this->view->field[$tmp['fieldname']]->options['settings']['image_style'] && !empty($value['uri'])) {
+	          if (isset($this->view->field[$tmp['fieldname']]->options['settings']['image_style']) && !empty($value['uri'])) {
                 $value['uri'] = image_style_url($this->view->field[$tmp['fieldname']]->options['settings']['image_style'], $value['uri']);
               }
             }

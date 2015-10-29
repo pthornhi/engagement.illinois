@@ -76,8 +76,5 @@
         <?php print $reset_button; ?>
       </div>
     <?php endif; ?>
-		<div class="views-exposed-widget views-upload-story">
-			<a href="/node/add/node-gallery-item">SHARE YOUR STORY</a>
-		</div>
   </div>
 </div>

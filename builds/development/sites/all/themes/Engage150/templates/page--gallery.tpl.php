@@ -14,10 +14,10 @@
 			    <li class="mobile-icon nav-item"><button class="nav-toggler toggle-push-top"></button><button class="close-menu"></button></li>
 				<li class=""><a class="icon info" href="/about.html"><span>About</span></a></li>
 				<li class=""><a class="icon rooms" href="/projects.html"><span>Major Projects</span></a></li>
-				<li class=""><a class="icon info" href="/timeline.html"><span>Timeline</span></a></li>
+				<li class=""><a class="icon info" href="/timeline/"><span>Timeline</span></a></li>
                 <li class=""><a class="icon dining" href="/events.html"><span>Events</span></a></li>
 				<li class=""><a class="icon events" href="/newsletters.html"><span>Newsletters</span></a></li>
-				<li class=""><a class="icon at<icon></icon>tractions" href="/involved.html"><span>Get Involved</span></a></li>
+				<li class=""><a class="icon at<icon></icon>tractions" href="/gallery"><span>Share Your Story</span></a></li>
 		    </ul>
 		</nav><!-- /push menu top -->	
 
@@ -46,10 +46,10 @@
 			        <ul class="navlist">
 						<li class="nav-item"><a class="icon info" href="/about.html"><span>About</span></a></li>
 	                    <li class="nav-item"><a class="icon rooms" href="/projects.html"><span>Major Projects</span></a></li>
-						<li class="nav-item"><a class="icon info" href="/timeline.html"><span>Timeline</span></a></li>                                         
+						<li class="nav-item"><a class="icon info" href="/timeline/"><span>Timeline</span></a></li>                                         
 	                    <li class="nav-item"><a class="icon dining" href="/events.html"><span>Events</span></a></li>
 	                    <li class="nav-item"><a class="icon events" href="/newsletters.html"><span>Newsletters</span></a></li>	
-						<li class="nav-item"><a class="icon at<icon></icon>tractions" href="/involved.html"><span>Get Involved</span></a></li>
+						<li class="nav-item"><a class="icon at<icon></icon>tractions" href="/gallery"><span>Share Your Story</span></a></li>
 			        </ul><!-- navlist -->
 			    </section><!-- layout -->
 			</nav><!-- navigation --> 

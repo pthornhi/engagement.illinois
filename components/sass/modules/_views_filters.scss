@@ -133,7 +133,18 @@
 					text-transform: uppercase;
 				}
 			}
-			&.views-widget-filter-field_tags_tid{ //tags dropdown
+			&.views-widget-filter-field_tags_tid{ //timeline tags dropdown
+				width: 87px;
+				margin-right: 2px;
+				.form-item button{
+					width: 85px !important;
+					text-align: center;
+					height: $filter_height;
+					font-size: 12px !important;
+					text-transform: uppercase;
+				}
+			}
+			&.views-widget-filter-field_gallery_tags_tid{ //gallery tags dropdown
 				width: 87px;
 				margin-right: 2px;
 				.form-item button{
@@ -170,9 +181,53 @@
 	}
 	#edit-field-tags-tid-wrapper,
 	#edit-field-colleges-and-schools-tid-wrapper,
-	#edit-field-media-type-tid-wrapper {
+	#edit-field-media-type-tid-wrapper,
+	#edit-field-gallery-tags-tid-wrapper {
 		label{
 			display: none;
+		}
+	}
+}
+.view-admin-views-node{
+	.view-filters{
+		@include clearfix;
+		width: 100%;
+		form{
+			@include clearfix;
+			.views-exposed-form{
+				float: left;
+				color: black;
+				.views-exposed-widgets{
+					position: relative;
+					label {
+						color: $primary-text;
+					}
+					.views-exposed-widget#edit-status-wrapper{
+						position: relative;
+						margin-right: 50px;
+					}
+					.views-exposed-widget#edit-field-timeline-dates-value-wrapper{
+						position: relative;
+					}
+					.views-exposed-widget#edit-keys-wrapper{
+						width: 100%;
+						margin-top: 35px;
+					}
+					.form-item{
+						input{
+							background-color: #fff;
+							border: 1px inset;
+							border-radius: 5px;
+							color: #333333;
+							cursor: auto;
+							display: inline-block;
+							font-size: 13px;
+							margin-top: auto;
+							padding: 8px 1.5em;					
+						}
+					}
+				}
+			}
 		}
 	}
 }

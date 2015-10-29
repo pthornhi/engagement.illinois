@@ -49,3 +49,11 @@ p { }
 }
 
 .list-links li a .icon{ @include list-link-icon;}
+.admin-views-view table{
+	width: 100%;
+	.views-field{
+		img{
+			width: auto;
+		}
+	}
+}

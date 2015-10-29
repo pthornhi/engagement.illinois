@@ -4,6 +4,14 @@ body #wrapper #gallery.page{
 table#taxonomy{
 	width: 100%;
 }
+// in the lightbox
+#cboxLoadedContent{
+	.field-name-field-gallery-image{
+		img{
+			height: auto !important;
+		}
+	}
+}
 .view-gallery{
 	.action-info {
 		color:$primary-text;
@@ -43,6 +51,32 @@ table#taxonomy{
 				line-height: 150%;
 				font-family: $font-greybody-text;
 				padding: 5% 5% 5%;
+			}
+			.views-field-field-city{
+				margin-left: 20px;
+				color: lighten($primary-text, 20);
+				font-size: .9em;
+				position: relative;
+				top: -30px;
+			}
+			.views-field-field-state-province{
+				color: lighten($primary-text, 20);
+				font-size: .9em;
+				position: relative;
+				top: -30px;
+				left: -2px;
+				&:before{
+					content: ", ";
+				}
+			}
+			.views-field-field-country{
+				color: lighten($primary-text, 20);
+				font-size: .9em;
+				position: relative;
+				top: -30px;
+				&:before {
+					content: " - ";
+				}
 			}
 		}
 		.views-field-field-gallery-audio{

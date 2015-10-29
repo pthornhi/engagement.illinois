@@ -11,6 +11,32 @@ function toggleClass( elem, c ) {
 	fn( elem, c );
 }
 
+var loadHorizLoad = function(){
+	'use strict';
+	/* if(typeof $.fn.mCustomScrollbar !== 'undefined'){
+		var windowWidth = ($(window).width())-200;
+		$('.owl-carousel').mCustomScrollbar({
+				axis:'x',
+				theme: 'dark-thick',
+				scrollbarPosition: 'inside',
+				scrollButtons: 'enable',
+				set_width: '100%',
+				mouseWheelPixels:0,
+				advanced:{
+					autoScrollOnFocus:false, 
+				},
+		});
+		var owlControls = $('.owl-controls').detach();
+		owlControls.appendTo('#mCSB_1');
+		$('.owl-wrapper').css("max-width", "22500px !important");
+	} */
+	if($('.owl-controls .owl-pagination')){
+		var owlControls = $('.owl-controls .owl-pagination').detach();
+		$('.view-content').prepend(owlControls);
+		$('.owl-pagination').wrap( '<div class="custom-owl-controls clickable"></div>');
+	}
+};
+
 $(document).ready(function ($) {
   'use strict';
 	if(typeof $ !== 'undefined'){
@@ -54,8 +80,32 @@ $(document).ready(function ($) {
 											      appendTo: 'body',
 											    });
 		}
+		
+		//alter the view tags in gallery filter to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-gallery-tags-tid').length > 0){
+			$('.form-item-field-gallery-tags-tid select').multiselect({
+											      header: false,
+											      height: 400,
+											      minWidth: 125,
+											      classes: '',
+											      checkAllText: 'Check all',
+											      uncheckAllText: 'Uncheck all',
+											      noneSelectedText: 'Tags',
+											      selectedText: '# selected',
+											      selectedList: 0,
+											      show: null,
+											      hide: null,
+											      autoOpen: false,
+											      multiple: true,
+											      position: {
+												      my: 'left bottom',
+												      at: 'left top'
+											      },
+											      appendTo: 'body',
+											    });
+		}
 
-		//alter the view tags filter to be a dropdown button
+		//alter the view tags in timeline filter to be a dropdown button
 		if(typeof $.fn.multiselect !== 'undefined' && $('#edit-field-tags-tid').length > 0){
 			$('.form-item-field-tags-tid select').multiselect({
 											      header: false,
@@ -102,7 +152,27 @@ $(document).ready(function ($) {
 												   }
 											    });
 		}
-		//alter the tags in node edit form to be a dropdown button
+		
+		//alter the gallery tags in node edit form to be a dropdown button
+		if(typeof $.fn.multiselect !== 'undefined' && $('.form-item-field-gallery-tags-und').length > 0){
+			$('.form-item-field-gallery-tags-und select').multiselect({
+												header: false,
+												height: 250,
+												minWidth: 315,
+												classes: '',
+												checkAllText: 'Check all',
+												uncheckAllText: 'Uncheck all',
+												noneSelectedText: '',
+												selectedText: '# selected',
+												selectedList: 8,
+												show: null,
+												hide: null,
+												autoOpen: false,
+												multiple: true,
+												appendTo: 'body',
+											    });
+		}
+		//alter the timeline tags in node edit form to be a dropdown button
 		if(typeof $.fn.multiselect !== 'undefined' && $('.form-item-field-tags-und').length > 0){
 			$('.form-item-field-tags-und select').multiselect({
 												header: false,
@@ -187,7 +257,7 @@ $(document).ready(function ($) {
 		}
 		
 		//change the text on the gallery item save button to submit
-		$('#edit-actions input').val('Submit');
+		$('#node-gallery-item-node-form #edit-actions input#edit-submit').val('Submit');
 		
 		//this generates classes for the five different timeline styles
 		if($('.owl-wrapper').length > 0){
@@ -200,6 +270,13 @@ $(document).ready(function ($) {
 				$(this).addClass('item-style'+i);
 				i++;
 			});
+			//alert(typeof($.fn.horizontalScroll));
+			window.setTimeout(loadHorizLoad,1000);
+			//owl.owlCarousel();
+			//console.log(owlCarousel);
+			//owl.on('resize', function(e) {
+			//	alert('it resized');
+			//});
 		}
  /**
  * The nav stuff

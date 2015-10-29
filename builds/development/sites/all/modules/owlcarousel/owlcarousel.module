@@ -46,7 +46,8 @@ function owlcarousel_library() {
     'website' => 'http://owlgraphic.com/owlcarousel',
     'version' => array(),
     'js' => array(
-      $library . '/owl.carousel.min.js' => array(
+      //$library . '/owl.carousel.min.js' => array(
+	  $library . '/owl.carousel.js' => array(
         'scope' => 'footer',
       ),
     ),

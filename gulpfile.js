@@ -39,6 +39,8 @@ jsSources = [
 	'components/scripts/flowtype.js',
 	'components/scripts/responsiveslides.min.js',
 	'components/scripts/jquery.multiselect.js',
+	//'components/scripts/jquery.tinyscrollbar.js',
+	'components/scripts/jquery.mCustomScrollbar.min.js',
 	'components/scripts/script.js',
 ];
 sassSources = ['components/sass/style.scss'];

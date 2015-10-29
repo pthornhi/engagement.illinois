@@ -61,19 +61,58 @@ body #wrapper #timeline {
 	}
 	.view-content{
 		position: relative;
-		margin-top: 100px;
+		//margin-top: 100px;
+		.custom-owl-controls{}
+		.owl-pagination{
+			display: flex;
+			justify-content: space-around;
+			width: 70%;
+			margin: 40px auto 100px;
+			height: 7px;
+			background: url("/css/images/dragger-rail-bckgrnd.jpg") 0 0 repeat;
+			@include border-radius(10px);
+			.owl-page{
+				cursor: pointer;
+				display: inline-block;
+				height: 19px;
+				margin-top: -3px;
+				width: 20px;
+				position: relative;
+				.owl-numbers{
+				    color: #333;
+				    font-size: 12px;
+				    background: #FFF none repeat scroll 0% 0%;
+				    margin-top: 20px;
+				    height: auto;
+				    text-align: center;
+				    padding: 0px;
+					position: absolute;
+					left: 0px;
+				}
+				.pointer{
+					width: 16px;
+					height: 25px;
+					display: inline-block;
+					background: transparent url("/css/images/year-line.jpg") no-repeat scroll 9px 13px;
+				}
+				&.active .pointer{
+					background: transparent url("/css/images/active_pointer.png") no-repeat scroll 0px 0px;
+					z-index: 10;
+				}
+			}
+		}
 		.owl-carousel{
 			display: table;
 			.owl-wrapper-outer {
 				display: table-cell;
 			}
-			.owl-pagination{
-				display: none;
-			}
 			.owl-controls{
 				position: absolute;
 				top: 45%;
 				width: 100%;
+				.owl-pagination{
+					display: none;
+				}
 				.owl-buttons{
 					div{ //this makes a prev button in black
 						/* color: #FFF;
@@ -89,8 +128,8 @@ body #wrapper #timeline {
 						position: absolute;
 						width: 0px;
 						height: 0px;
-						border-top: 60px solid transparent;
-						border-bottom: 60px solid transparent;
+						//border-top: 60px solid transparent;
+						//border-bottom: 60px solid transparent;
 						padding: 0;
 						margin: 0;
 						display: block;
@@ -98,14 +137,45 @@ body #wrapper #timeline {
 						opacity: 0.7;
 						background: transparent;
 						text-indent: -2000px;
+						width: 38px;
+						height: 48px;
+						background-image: url("images/timeline_sprite.png");
+						background-repeat: no-repeat;
+						overflow: hidden;
 					}
 					.owl-prev{
 						left: 10px;
-						border-right: 45px solid #fff;
+						//border-right: 45px solid #fff;
+						background-position: 0px 1px;
 					}
 					.owl-next{
 						right: 10px;
-						border-left: 45px solid #fff;
+						//border-left: 45px solid #fff;
+						margin-left: 61px;
+						background-position: -51px 0px;
+					}
+				}
+			}
+			#mCSB_1_scrollbar_horizontal{
+				width: 1000px !important;
+				margin: 0 auto;
+				height: 35px;
+				.mCSB_draggerRail{
+					height: 10px;
+					margin-top: 15px;
+					border-radius: 5px;
+					border: 1px solid #888684;
+					background: url("/css/images/dragger-rail-bckgrnd.png") 0 0 repeat transparent;
+				}
+			}
+			.mCS-dark-thick.mCSB_scrollTools {
+				.mCSB_dragger {
+					.mCSB_dragger_bar{
+						background-color: none;
+						border-radius: 0px;
+						height: 31px;
+						width: 31px;
+						background: url("/css/images/dragger-ball.png") 0 0 no-repeat transparent;
 					}
 				}
 			}
@@ -114,7 +184,6 @@ body #wrapper #timeline {
 					font-family: $font-greybody-text;
 					padding: 20px 0;
 					position: relative;
-					//max-width: 140px;
 					a, a:visited{
 						color: $white;
 					}
@@ -260,7 +329,7 @@ body #wrapper #timeline {
 						margin: 20px 0px;
 						position: absolute;
 						top: $date_location;
-						left: 20px;
+						left: 25px;
 					}
 					.views-field-body{
 						padding: 0 10px;
@@ -304,10 +373,21 @@ body #wrapper #timeline {
 			float: right;
 		}
 	}
+	.view-filters{
+		@include clearfix;
+		#filter-intro {
+		    color: #333;
+		    font-weight: normal;
+		    font-size: 16px;
+		    margin-bottom: 10px;
+		    width: 550px;
+		    float: left;
+		    margin-left: 20px;
+		}
+	}
 }
 body.page-timeline .view-filters{
 	position: relative;
-	top: -80px;
 }
 .page-timeline-details{
 	footoer{
@@ -319,6 +399,8 @@ body.page-timeline .view-filters{
 	#timelinejs-timeline-page .text,
 	#timelinejs-timeline-page .text *{
 		font-family: $font-greybody-text !important;
+		box-shadow: none;
+		vertical-align: top;
 	}
 	#timelinejs-timeline-page{
 		//overflow: visible !important;
@@ -326,42 +408,82 @@ body.page-timeline .view-filters{
 			//overflow: visible !important;
 			.vco-feature .vco-slider{
 				//overflow: visible !important;
+				.nav-next{
+					height: 280px !important;
+					color: $lighter-text;
+					&:hover{
+						color: $primary-text;
+					}
+					.nav-container{
+						top: 150px !important;
+					}
+					.date{
+						display: block;
+						small{
+							visibility: visible;
+							display: block;
+						}
+					}
+				}
+				.nav-previous{
+					height: 280px !important;
+					color: $lighter-text;
+					&:hover{
+						color: $primary-text;
+					}
+					.nav-container{
+						top: 150px !important;
+					}
+					.date{
+						display: block;
+						small{
+							visibility: visible;
+							display: block;
+						}
+					}
+				}
 				.slider-container-mask{
 					//@include clearfix;
 					//height: auto !important;
 					.slider-container{
 						.slider-item-container{
 							.slider-item{
-								//@include clearfix;
-								//display: block;
-								//overflow: visible !important;
-								.content-container{
-									.media{
-										.credit {
-											text-align: left;
-										}
-									}
-									.text{
-										.container{
-											position: relative;
-											padding: 15px;
-											.date {
-												
+								.content{
+									vertical-align: top;
+									.content-container{
+										.media{
+											.media-wrapper {
+												padding-right: 20px;	
 											}
-											.slide-tag{
-												position: absolute;
-												bottom: -10px;
-												background: none;
-												left: 0;
-												ul {
-													list-style-type: none;
-													li {
-														color: $primary-text;
-														display: inline-block;
-														margin-right: 3px;
-														background: $light-grey;
-														padding: 5px 10px;
-														@include border-radius(10px);
+											.credit {
+												text-align: left;
+											}
+										}
+										.text{
+											.container{
+												position: relative;
+												padding: 15px;
+												.date {
+													//visibility: hidden;
+													small{
+														visibility: visible;
+													}
+												}
+												.slide-tag{
+													position: absolute;
+													bottom: -10px;
+													background: none;
+													left: 0;
+													ul {
+														list-style-type: none;
+														li {
+															color: $primary-text;
+															display: inline-block;
+															margin-right: 3px;
+															background: $light-grey;
+															padding: 5px 10px;
+															@include border-radius(10px);
+														}
 													}
 												}
 											}
@@ -397,21 +519,88 @@ body.page-timeline .view-filters{
 		///////////////////////////////
 // RESPONSIVE LAYOUT DYNAMIC TIMELINE--------------------------------------------------------------
 .page-timeline{
-		@include breakpoint(($mobile-portrait)){
-			.views-widget-filter-keys{
-				width: 87% !important;
+	@include breakpoint($mini){
+		.views-widget-filter-keys{
+			width: 87% !important;
+		}
+		.owl-pagination{
+			display: none !important;
+		}
+	}
+	@include breakpoint($mobile-portrait){
+		.views-widget-filter-keys{
+			width: 87% !important;
+		}
+		.owl-pagination{
+			display: none !important;
+		}
+	}	
+	@include breakpoint($mobile-landscape){
+		.view-content {
+			margin-top: 0 !important;
+		}
+		.views-widget-filter-keys{
+			width: 72% !important;
+		}
+		.owl-pagination{
+			width: 90% !important;
+			margin: 0px auto 35px !important;
+			.owl-page{
+				.owl-numbers{
+					font-size: 9px !important;
+				}
+				.pointer{
+				}
+				&.active .pointer{
+				}
+			}
+			.owl-page.even{
+				.owl-numbers{
+					margin-top: 25px !important;
+				}
+				.pointer{
+				}
+			}
+			.owl-page.odd{
+				.owl-numbers{
+					margin-top: 15px !important;
+				}
+				.pointer{
+				}
 			}
 		}
-		@include breakpoint($mobile-landscape){
-			.views-widget-filter-keys{
-				width: 72% !important;
+	}
+	@include breakpoint($tablet){
+		.views-widget-filter-keys{
+			width: 76% !important;
+		}
+		.owl-pagination{
+			width: 90% !important;
+			.owl-page{
+				.owl-numbers{
+					font-size: 10px !important;
+				}
+				.pointer{
+				}
+				&.active .pointer{
+				}
+			}
+			.owl-page.even{
+				.owl-numbers{
+					margin-top: 25px !important;
+				}
+				.pointer{
+				}
+			}
+			.owl-page.odd{
+				.owl-numbers{
+					margin-top: 15px !important;
+				}
+				.pointer{
+				}
 			}
 		}
-		@include breakpoint($tablet){
-			.views-widget-filter-keys{
-				width: 76% !important;
-			}
-		}
+	}
 }
 // --------------------------------------------------------------
 // END DYNAMIC TIMELINE
@@ -496,7 +685,6 @@ body.page-timeline .view-filters{
 body #wrapper .page#timeline{
 	@include breakpoint($mini){
 		.view-filters{
-			top: -125px;
 			width: 100%;
 			form{
 				width: 100%;
@@ -504,9 +692,13 @@ body #wrapper .page#timeline{
 					width: 100%;
 				}
 			}
+			#filter-intro {
+				width: 95%;
+				margin-top: 100px;
+			}
 		}
 		.view-content{
-			margin-top: 235px;
+			margin-top: 0px;
 			.owl-carousel .owl-wrapper .owl-item{
 				.views-field-field-timeline-media-image{
 					position: relative;
@@ -536,7 +728,7 @@ body #wrapper .page#timeline{
 	}
 	@include breakpoint($mobile-portrait){
 		.view-filters{
-			top: -175px;
+			top: 0;
 			width: 100%;
 			form{
 				width: 100%;
@@ -544,9 +736,12 @@ body #wrapper .page#timeline{
 					width: 100%;
 				}
 			}
+			#filter-intro {
+				width: 95%;
+			}
 		}
 		.view-content{
-			margin-top: 200px;
+			margin-top: 0;
 			.owl-carousel .owl-wrapper .owl-item{
 				.views-field-field-timeline-media-image{
 					position: relative;
@@ -576,7 +771,6 @@ body #wrapper .page#timeline{
 	}
 	@include breakpoint($mobile-landscape){
 		.view-filters{
-			top: -125px;
 			width: 100%;
 			form{
 				width: 100%;
@@ -586,12 +780,11 @@ body #wrapper .page#timeline{
 			}
 		}
 		.view-content{
-			margin-top: 135px;
+			margin-top: 35px;
 		}
 	}
 	@include breakpoint(($tablet)){
 		.view-filters{
-			top: -125px;
 			width: 100%;
 			form{
 				width: 100%;
@@ -601,7 +794,7 @@ body #wrapper .page#timeline{
 			}
 		}
 		.view-content{
-			margin-top: 135px;
+			margin-top: 35px;
 		}
 	}
 }

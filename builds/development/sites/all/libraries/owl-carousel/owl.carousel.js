@@ -11,7 +11,6 @@
 /*JS Lint helpers: */
 /*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
 /*jslint nomen: true, continue:true */
-
 if (typeof Object.create !== "function") {
     Object.create = function (obj) {
         function F() {}
@@ -469,17 +468,39 @@ if (typeof Object.create !== "function") {
 
             for (i = 0; i < base.itemsAmount; i += 1) {
                 if (i % base.options.items === 0) {
+					// custom block of programming to put the year in for the pagination counter
+					var slideNumber = (counter*base.options.items) + (base.options.items/2);
+					var eventYear = $('.owl-item .item-'+slideNumber+' .views-field-field-timeline-dates .date-display-single').text();
+					if(counter === 0){
+						var eventYear = $('.owl-item .item-0 .views-field-field-timeline-dates .date-display-single').text();
+					}
+					if(slideNumber > (base.itemsAmount-4)){
+						var eventYear = $('.owl-item .item-'+(base.itemsAmount-1)+' .views-field-field-timeline-dates .date-display-single').text();
+					}
+					$(this).text(eventYear);
                     counter += 1;
+                    var oddeven = "even";
+					  if ( ( counter % 2 ) == 0 ) {
+					    oddeven = 'even';
+					  } else {
+						  oddeven = 'odd';
+					  }
                     if (lastPage === i) {
                         lastItem = base.itemsAmount - base.options.items;
                     }
                     paginationButton = $("<div/>", {
-                        "class" : "owl-page"
+                        "class" : "owl-page " + oddeven,
                     });
+                    
                     paginationButtonInner = $("<span></span>", {
-                        "text": base.options.paginationNumbers === true ? counter : "",
+                        "text": base.options.paginationNumbers === true ? eventYear : "",
                         "class": base.options.paginationNumbers === true ? "owl-numbers" : ""
                     });
+                    paginationButtonInner2 = $("<span></span>", {
+                        "text":"",
+                        "class": "pointer"
+                    });
+                    paginationButton.append(paginationButtonInner2);
                     paginationButton.append(paginationButtonInner);
 
                     paginationButton.data("owl-page", lastPage === i ? lastItem : i);
